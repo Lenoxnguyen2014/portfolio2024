@@ -1,0 +1,1 @@
+//typescript for all types go in here

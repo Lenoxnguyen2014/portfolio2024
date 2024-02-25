@@ -1,6 +1,4 @@
 'use client'
-import Image from 'next/image'
-import { useState } from 'react'
 
 interface Props {
     weatherMain: string,
@@ -9,7 +7,7 @@ interface Props {
     weatherIconLink: string
 }
 
-const Weather = ({ weatherMain, weatherDescription, weatherIcon, weatherIconLink }: Props) => {
+const Weather = ({ weatherMain, weatherDescription, weatherIconLink }: Props) => {
     const weatherState  = 'Today: '
 
     return (

@@ -4,9 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { formatDate } from "@/lib/formatDate"
 
-export const dynamic = "force-dynamic"
-export const fetchCache = "force-no-store"
-
 const client = createClient({
   space: `${process.env.CONTENTFUL_SPACE_ID}`,
   accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`,

@@ -1,10 +1,10 @@
-import { ContentfulClientApi, createClient } from "contentful";
+import { createClient } from "contentful";
 import { BlogQueryResult } from "@/src/type";
 import Link from "next/link";
 import Image from "next/image";
 import { formatDate } from "@/lib/formatDate"
 
-const client: ContentfulClientApi = createClient({
+const client = createClient({
   space: `${process.env.CONTENTFUL_SPACE_ID}`,
   accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
 })

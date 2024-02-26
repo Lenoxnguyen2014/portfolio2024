@@ -3,6 +3,10 @@ import { getWeatherData } from '@/utils/callOpenApi'
 import  Weather  from '@/components/weather'
 import GenerateQuote from '@/components/quote'
 
+
+export const dynamic = "force-dynamic"
+export const fetchCache = "force-no-store"
+
 export default async function Home() {
   const data  = await getWeatherData()
   const weatherMain = data["current"]["weather"][0]["main"]

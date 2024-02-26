@@ -10,7 +10,7 @@ import mist from '@/public/mist.svg'
 import fog from '@/public/fog.svg'
 import smoke from '@/public/smoke.svg'
 import { getWeatherData } from '@/utils/callOpenApi'
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 const inter = Inter({ subsets: ["latin"] });
 
 const changeBackgroundBaseOnWeather = async() => {
@@ -84,6 +84,7 @@ export default function RootLayout({
           </nav>
         </header>
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );

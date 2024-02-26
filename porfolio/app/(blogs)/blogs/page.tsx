@@ -16,14 +16,14 @@ const getAllBlogsEntries = async(): Promise<BlogQueryResult> => {
 const MyBlogs = async() => {
     const blogs = await getAllBlogsEntries()
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <main className="h-screen grid grid-cols-4 gap-2 content-start mt-10">
         {blogs.items.map((singlePost) => {
           const { slug, title, date, thumbnail, authorName, categoryName } = singlePost.fields;
           const thumbnailLink = `https:${thumbnail.fields.file.url}`
           return (
-            <div key={slug} >
+            <div key={slug} className="block max-w-sm p-20 ml-10 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
               <Link href={`/blogs/${slug}`}>
-              <img src={thumbnailLink} width={60} height={60}/>
+              <img className="float-start" src={thumbnailLink} width={100}/>
                 <h2>{title}</h2>
                 <p>By {authorName}</p>
                 <p>{categoryName}</p>

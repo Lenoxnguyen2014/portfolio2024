@@ -1,27 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { getWeatherData } from '@/utils/callOpenApi'
 import  Weather  from '@/components/weather'
-type ResponseData = {
-  "current": {
-    "weather": [
-      {
-        "id": string,
-        "main": string,
-        "description": string,
-        "icon": string
-      }
-    ]
-  }
-}
-
-const getWeatherData = async (): Promise<ResponseData> => {
-  const openWeatherAPI = `https://api.openweathermap.org/data/2.5/onecall?lat=${process.env.WEATHER_API_LAT}&lon=${process.env.WEATHER_API_LON}&appid=${process.env.WEATHER_API_KEY}`
-
-  const res = await fetch(openWeatherAPI, { next: { revalidate: 3600 }} )
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
-  }
-  return res.json()
-}
+import GenerateQuote from '@/components/quote'
 
 export default async function Home() {
   const data  = await getWeatherData()
@@ -31,8 +11,11 @@ export default async function Home() {
   const weatherIconLink = `http://openweathermap.org/img/w/${weatherIcon}.png`
 
   return (
-    <div> Home
+    <div className="grid h-screen place-items-center ">
       <Weather weatherMain={weatherMain} weatherDescription={weatherDescription} weatherIcon={weatherIcon} weatherIconLink={weatherIconLink} />
+      <div className="flex justify-center items-center h-32">
+      <GenerateQuote />
+      </div>
     </div>
   )
 }

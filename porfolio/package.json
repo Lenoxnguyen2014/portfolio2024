@@ -9,10 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^5.10.2",
     "contentful": "^10.6.22",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-geocode": "^1.0.0-alpha.1",
+    "react-type-animation": "^3.2.0",
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
@@ -23,6 +26,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "postcss": "^8",
+    "prisma": "^5.10.2",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
   }

@@ -1,14 +1,12 @@
 import Image from "next/image"
 
 const MyResume = () => {
-    // add style for this page tmr
-    // and checkout download button
     return (
-    <div >
-        <Image
+    <div className="h-screen bg-gray-100/50" >
+        <Image className="object-contain max-h-full min-w-full overflow-x-hidden"
         src="/resume.svg"
         alt="Resume 2024"
-        width={80}
+        width={100}
         height={50}
         priority
     />

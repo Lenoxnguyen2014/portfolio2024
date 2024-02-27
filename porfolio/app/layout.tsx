@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 
 export const revalidate = 3600
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -62,10 +62,7 @@ export default function RootLayout({
     { href: '/contact', label: 'Contact'}
   ]
 
-  changeBackgroundBaseOnWeather().then((value) => {
-    imgSrc = value
-    return imgSrc
-  })
+  imgSrc = await changeBackgroundBaseOnWeather()
 
   return (
     <html lang="en">

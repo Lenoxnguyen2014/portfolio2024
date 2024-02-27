@@ -37,13 +37,10 @@ const changeBackgroundBaseOnWeather = async() => {
     }
   }
   var result = img(weatherMain)
-  console.log(result.src)
   return result.src
 }
 var imgSrc: string
-changeBackgroundBaseOnWeather().then((value) => {
-  imgSrc = value
-})
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -64,6 +61,11 @@ export default function RootLayout({
     { href: '/blogs', label: 'Blogs'},
     { href: '/contact', label: 'Contact'}
   ]
+
+  changeBackgroundBaseOnWeather().then((value) => {
+    imgSrc = value
+    return imgSrc
+  })
 
   return (
     <html lang="en">

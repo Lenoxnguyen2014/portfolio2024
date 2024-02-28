@@ -16,7 +16,7 @@ const Weather = ({ weatherMain, weatherDescription, weatherIconLink }: Props) =>
                 <img  src={weatherIconLink} alt="weaatherIcon" width={100} height={20} />
             </div>
             <div className=" box-border p-4 border-10">
-                <h4>{weatherState}: {weatherMain} </h4>
+                <h4>{weatherState} {weatherMain} </h4>
                 <div>
                     {weatherDescription} in Vancouver
                 </div>

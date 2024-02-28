@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
 import clouds from'@/public/clouds.svg'
 import rain from '@/public/rain.svg'
 import snow from '@/public/snow.svg'
@@ -11,6 +10,8 @@ import fog from '@/public/fog.svg'
 import smoke from '@/public/smoke.svg'
 import { getWeatherData } from '@/utils/callOpenApi'
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import NavBar from "@/components/navbar"
+
 const inter = Inter({ subsets: ["latin"] });
 
 const changeBackgroundBaseOnWeather = async() => {
@@ -54,13 +55,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const links = [
-    { href: '/', label: 'Home' },
-    { href: '/myyoutube', label: 'My Youtube' },
-    { href: '/resume', label: 'Resume' },
-    { href: '/blogs', label: 'Blogs'},
-    { href: '/contact', label: 'Contact'}
-  ]
 
   imgSrc = await changeBackgroundBaseOnWeather()
 
@@ -72,15 +66,7 @@ export default async function RootLayout({
       backgroundSize: 'cover',
     }}>
         <header className="">
-          <nav className="">
-            <ul className="grid grid-cols-5 gap-1 content-center">
-              {links.map(({ href, label }) => (
-                <li key={href} className="px-4 text-sm md:text-2xl ">
-                  <Link className="active:bg-sky-100" href={href}>{label}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <NavBar />
         </header>
         {children}
         <SpeedInsights />

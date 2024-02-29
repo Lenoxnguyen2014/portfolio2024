@@ -11,6 +11,7 @@ import smoke from '@/public/smoke.svg'
 import { getWeatherData } from '@/utils/callOpenApi'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import NavBar from "@/components/navbar"
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -70,6 +71,7 @@ export default async function RootLayout({
         </header>
         {children}
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );

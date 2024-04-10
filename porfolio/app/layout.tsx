@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import clouds from'@/public/clouds.svg'
 import rain from '@/public/rain.svg'
 import snow from '@/public/snow.svg'
 import sunny from '@/public/sunny.svg'
@@ -20,7 +21,7 @@ const changeBackgroundBaseOnWeather = async() => {
   const img = (weatherMain: string) => {
     switch (weatherMain) {
     case "Clouds":
-      return snow
+      return clouds
     case "Rain":
       return rain
     case "Snow":

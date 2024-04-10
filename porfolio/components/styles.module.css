@@ -1,14 +1,4 @@
-.background {
-    background: linear-gradient(#e66465, #9198e5);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-  }
-  
+
   .scrollText {
     font-size: 1.5rem;
   }
@@ -30,16 +20,16 @@
   
   .sticky {
     margin-left: 15%;
-    background-color: #ff6d6d;
+    background-color: #17B890;
   }
   
   .blue {
-    background-color: #5b65ad;
+    background-color: #094074;
     color: white;
   }
   
   .purple {
-    background-color: #9d65d0;
+    background-color: #FFDD4A;
   }
   
   @media (max-width: 750px) {

@@ -1,14 +1,17 @@
 'use client'
 import React, { useState, CSSProperties, useEffect } from 'react'
 import { useTransition, animated, AnimatedProps, useSpringRef } from '@react-spring/web'
-
+import Image from 'next/image'
+import undraw_meditating from '../../public/undraw_meditating.svg'
+import undraw_youtuber from '../../public/undraw_video_influencer.svg'
+import undraw_garden from '../../public/undraw_gardening.svg'
 import styles from './styles.module.css'
 
 const pages: ((props: AnimatedProps<{ style: CSSProperties }>) => React.ReactElement)[] = [
-  ({ style }) => <animated.div style={{ ...style, background: 'lightpink' }}>
+  ({ style }) => <animated.div style={{ ...style, backgroundColor: '#17B890' }}>
      <div className="grid grid-cols-2 m-20 ml-10 max-sm:block m-0">
         <div className="w-50">
-        <img src="https://mymodernmet.com/wp/wp-content/uploads/2020/10/cooper-baby-corgi-dogs-8.jpg"></img>
+        <Image src={undraw_garden} alt="garden"/>
         </div>
         <div className="ml-20 p-10 place-self-center max-sm:ml-0 " style={{border: "solid 1px"}}> 
             <h1>If I am not a software developer</h1>
@@ -28,10 +31,10 @@ const pages: ((props: AnimatedProps<{ style: CSSProperties }>) => React.ReactEle
         </div>
      </div>
   </animated.div>,
-  ({ style }) => <animated.div style={{ ...style, background: 'lightblue' }}>
+  ({ style }) => <animated.div style={{ ...style, backgroundColor: '#094074' }}>
    <div className="grid grid-cols-2 m-20 ml-10 max-sm:block m-0">
         <div className="w-50">
-        <img src="https://mymodernmet.com/wp/wp-content/uploads/2020/10/cooper-baby-corgi-dogs-8.jpg"></img>
+        <Image src={undraw_meditating} alt="meditate" />
         </div>
         <div className="ml-20 p-10 place-self-center max-sm:ml-0 " style={{border: "solid 1px"}}> 
             <h1>If I am not a software developer</h1>
@@ -52,12 +55,12 @@ const pages: ((props: AnimatedProps<{ style: CSSProperties }>) => React.ReactEle
      </div>
 
   </animated.div>,
-  ({ style }) => <animated.div style={{ ...style, background: 'lightgreen'}}>
+  ({ style }) => <animated.div style={{ ...style, backgroundColor: '#FFDD4A'}}>
    <div className="grid grid-cols-2 m-20 ml-10 max-sm:block m-0">
         <div className="w-50">
-        <img src="https://mymodernmet.com/wp/wp-content/uploads/2020/10/cooper-baby-corgi-dogs-8.jpg"></img>
+        <Image src={undraw_youtuber} alt="youtuber"/>
         </div>
-        <div className="ml-20 p-10 place-self-center max-sm:ml-0 " style={{border: "solid 1px"}}> 
+        <div className="ml-20 p-10 place-self-center max-sm:ml-0 " style={{border: "solid 1px", color: "black"}}> 
             <h1>If I am not a software developer</h1>
             <br/>
             <p>

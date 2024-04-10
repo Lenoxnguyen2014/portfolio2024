@@ -2,13 +2,17 @@
 
 import { TypeAnimation } from "react-type-animation"
 
-const GenerateQuote = () => {
+interface StringQuote {
+    stringQuote: string
+    subString: string
+}
+const GenerateQuote = (props: StringQuote) => {
     return (
-            <TypeAnimation
+            <TypeAnimation key="1"
                 sequence={[
-                    "Do things at your own pace",
+                    props.stringQuote,
                     1000,
-                    "Life is not a race",
+                    props.subString,
                     1000
                 ]}
                 speed={50}

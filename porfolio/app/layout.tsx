@@ -4,7 +4,7 @@ import "./globals.css";
 import clouds from'@/public/clouds.svg'
 import rain from '@/public/rain.svg'
 import snow from '@/public/snow.svg'
-import clear from '@/public/clear.svg'
+import sunny from '@/public/sunny.svg'
 import mist from '@/public/mist.svg'
 import fog from '@/public/fog.svg'
 import smoke from '@/public/smoke.svg'
@@ -28,7 +28,7 @@ const changeBackgroundBaseOnWeather = async() => {
     case "Snow":
       return snow
     case "Clear":
-      return clear
+      return sunny
     case "Mist":
       return mist
     case "Fog" && "Smoke":

@@ -5,7 +5,7 @@ const MyYoutube = async() => {
     const videoItems = await callYoutubeAPI()
     return (
 
-        <main className="h-screen sm:grid sm:grid-cols-2 md:grid-cols-4 sm:gap-2 sm:content-start sm:mt-10 block">
+        <main className="h-screen sm:grid sm:grid-cols-2 md:grid-cols-4 sm:gap-2 sm:content-start sm:mt-10 block" >
             {videoItems.items.map((singleVideo) => {
                 const title = singleVideo.snippet.title
                 const videoId = singleVideo.id.videoId

@@ -4,7 +4,8 @@ import * as React from 'react'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import styles from './styles.module.css'
 
-export default function ParallaxComponent() {
+
+export default function ParallaxComponent(props) {
   const alignCenter = { display: 'flex', alignItems: 'center' }
   return (
     <div>
@@ -12,7 +13,7 @@ export default function ParallaxComponent() {
 
       <Parallax pages={5}>
         <ParallaxLayer offset={0} speed={0.5} style={{ ...alignCenter, justifyContent: 'center' }}>
-          <p className={styles.scrollText}>Scroll down</p>
+          <p className={styles.scrollText}>{props.weatherMain}</p>
         </ParallaxLayer>
 
         <ParallaxLayer sticky={{ start: 1, end: 3 }} style={{ ...alignCenter, justifyContent: 'flex-start' }}>

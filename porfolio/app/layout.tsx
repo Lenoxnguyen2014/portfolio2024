@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import clouds from'@/public/clouds.svg'
 import rain from '@/public/rain.svg'
 import snow from '@/public/snow.svg'
 import sunny from '@/public/sunny.svg'
 import mist from '@/public/mist.svg'
-import fog from '@/public/fog.svg'
 import smoke from '@/public/smoke.svg'
 import { getWeatherData } from '@/utils/callOpenApi'
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -22,7 +20,7 @@ const changeBackgroundBaseOnWeather = async() => {
   const img = (weatherMain: string) => {
     switch (weatherMain) {
     case "Clouds":
-      return clouds
+      return snow
     case "Rain":
       return rain
     case "Snow":
@@ -34,8 +32,8 @@ const changeBackgroundBaseOnWeather = async() => {
     case "Fog" && "Smoke":
       return smoke
     case "Haze" && "Dust":
-      return fog
-    default: clear
+      return smoke
+    default: sunny
     }
   }
   var result = img(weatherMain)

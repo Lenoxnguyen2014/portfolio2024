@@ -10,17 +10,17 @@ const MyBlogs = async() => {
           const { id, slug, title, date, thumbnail, authorName, categoryName } = singlePost.fields;
           const thumbnailLink = `https:${thumbnail.fields.file.url}`
           return (
-            <div key={slug} className="block max-w-sm xl:p-20 p-5 sm:m-10 m-10 mt-20 bg-white border border-gray-200 rounded-lg shadow hover:bg-sky-100">
+            <div key={slug} className="block max-w-sm xl:p-2 p-4 sm:m-10 m-10 mt-20 bg-white rounded-lg shadow hover:bg-sky-100">
               <Link href={`/blogs/${id}/${slug}`}>
-              <img className="float-start" src={thumbnailLink} width={250}/>
-              <div className="">
-                <h2 className="bg-gray-200">{title}</h2>
-                <p>By {authorName}</p>
-                <p>Category: {categoryName}</p>
-                <span>
-                  Posted on {formatDate(date)}
-                </span>
-              </div>
+              <img className="flex w-full" src={thumbnailLink} width={250}/>
+                <div>
+                  <h2 className="font-bold text-xl">{title}</h2>
+                  <p>By {authorName}</p>
+                  <p>Category: {categoryName}</p>
+                  <span>
+                    Posted on {formatDate(date)}
+                  </span>
+                </div>
               </Link>
             </div>
           );

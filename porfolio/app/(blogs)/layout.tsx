@@ -1,12 +1,13 @@
-import MyHeader from "@/components/pageHeader"
+import React from 'react'
+import MyHeader from '@/components/pageHeader'
 
 const Blogs = ({ children }) => {
-    return (
+  return (
         <div>
             <MyHeader title="Blogs" subTitle="Technical blogs"/>
             { children }
         </div>
-    )
+  )
 }
 
 export default Blogs

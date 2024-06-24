@@ -1,24 +1,46 @@
-import Link from "next/link";
+'use client'
+import React from 'react'
+import Link from 'next/link'
+import Logo from '../src/logo-lezen.png'
+import Image from 'next/image'
+import { useState } from 'react'
 
 const NavBar = () => {
-    const links = [
-        { href: '/', label: 'Home' },
-        { href: '/myyoutube', label: 'My Youtube' },
-        { href: '/resume', label: 'About Me' },
-        { href: '/blogs', label: 'Blogs'},
-        { href: '/contact', label: 'Contact'}
-      ]
-    return (
-        <nav className="bg-gray-200/50 fixed top-0 left-0 right-0 z-10">
-        <ul className="grid grid-cols-5 gap-1 content-center">
-          {links.map(({ href, label }) => (
-            <li key={href} className="px-4 text-sm md:text-2xl ">
-              <Link className="active:bg-sky-100" href={href}>{label}</Link>
-            </li>
-          ))}
-        </ul>
+  const [hamburgerOpen, setHamburgerOpen] = useState(false)
+
+  const showMenu = () => {
+    setHamburgerOpen(!hamburgerOpen)
+  }
+  const links = [
+    { href: '/projects', label: 'Projects' },
+    { href: '/blogs', label: 'Blogs' },
+    { href: '/myyoutube', label: 'My Youtube' }
+  ]
+  return (
+      <nav className={'bg-black border-gray-200 ' + (hamburgerOpen ? 'bg-black overscroll-y-none z-index: 10' : 'background-color: none')} >
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
+        <Link href="/">
+          <Image src={Logo} alt="logo" className="h-36 w-36"/>
+        </Link>
+        <button onClick={showMenu} type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
+          <span className="sr-only">Open main menu</span>
+            <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
+        </button>
+        <div className={'w-screen relative max-sm:static z-10 max-sm:bg-black sm:flex sm:items-center sm:w-auto max-sm:h-screen max-sm:m-36' + (hamburgerOpen ? 'flex' : 'hidden')}>
+        <ul className="sm:flex sm:space-x-4 max-sm:space-y-16">
+        {links.map(({ href, label }) => (
+              <li key={href} className="text-sm md:text-xl font-bold text-white ">
+                <Link className="active:bg-sky-100" href={href} >{label}</Link>
+              </li>
+        ))}
+            <li><button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Buy Me a coffee</button></li>
+          </ul>
+          </div>
+        </div>
       </nav>
-    )
+  )
 }
 
 export default NavBar

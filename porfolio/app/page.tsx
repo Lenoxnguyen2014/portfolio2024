@@ -1,7 +1,6 @@
 import React, { Children } from 'react'
 import { getWeatherData } from '@/utils/callOpenApi'
 import Weather from '@/components/weather'
-import FlubberCard from '@/components/flubberCard'
 
 export default async function Home () {
   const data = await getWeatherData()
@@ -13,7 +12,6 @@ export default async function Home () {
   return (
     <div >
       <Weather className="min-h-screen" weatherMain={weatherMain} weatherDescription={weatherDescription} weatherIcon={weatherIcon} weatherIconLink={weatherIconLink} />
-      <FlubberCard />
     </div>
   )
 }

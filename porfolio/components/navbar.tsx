@@ -31,11 +31,11 @@ const NavBar = () => {
         <div className={'w-screen relative max-sm:static z-10 max-sm:bg-black sm:flex sm:items-center sm:w-auto max-sm:h-screen max-sm:m-36' + (hamburgerOpen ? 'flex' : 'hidden')}>
         <ul className="sm:flex sm:space-x-4 max-sm:space-y-16">
         {links.map(({ href, label }) => (
-              <li key={href} className="text-sm md:text-xl font-bold text-white ">
+              <li key={href} className="text-sm md:text-xl font-bold text-white pt-2">
                 <Link className="active:bg-sky-100" href={href} >{label}</Link>
               </li>
         ))}
-            <li><button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Buy Me a coffee</button></li>
+            <li><button className="bg-cyan-900 hover:bg-cyan-700 text-white font-bold p-2 rounded">Buy Me a coffee</button></li>
           </ul>
           </div>
         </div>

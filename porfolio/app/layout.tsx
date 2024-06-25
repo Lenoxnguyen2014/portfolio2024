@@ -26,7 +26,7 @@ export default async function RootLayout({
         <header className="">
           <NavBar />
         </header>
-        <div className="m-8">
+        <div className="m-16">
           {children}
         </div>
         <SpeedInsights />

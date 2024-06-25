@@ -13,7 +13,6 @@ const Weather = ({ weatherMain, weatherDescription, weatherIconLink }: Weather) 
   const weatherState = 'Today: '
 
   return (
-
         <div className="max-w-sm rounded overflow-hidden shadow-lg h-64 bg-cyan-900 text-white">
             <motion.div
                 initial={{ opacity: 0, scale: 0.5 }}

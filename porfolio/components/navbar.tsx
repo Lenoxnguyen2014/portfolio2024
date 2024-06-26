@@ -12,9 +12,9 @@ const NavBar = () => {
     setHamburgerOpen(!hamburgerOpen)
   }
   const links = [
-    { href: '/projects', label: 'Projects' },
-    { href: '/blogs', label: 'Blogs' },
-    { href: '/myyoutube', label: 'My Youtube' }
+    { href: '/#projects', label: 'Projects' },
+    { href: '/#blogs', label: 'Blogs' },
+    { href: '/#myyoutube', label: 'My Youtube' }
   ]
   return (
       <nav className={'bg-black border-gray-200 ' + (hamburgerOpen ? 'bg-black overscroll-y-none z-index: 10' : 'background-color: none')} >
@@ -35,7 +35,7 @@ const NavBar = () => {
                 <Link className="active:bg-sky-100" href={href} >{label}</Link>
               </li>
         ))}
-            <li><button className="bg-cyan-900 hover:bg-cyan-700 text-white font-bold p-2 rounded">Buy Me a coffee</button></li>
+            <li><a href="https://www.buymeacoffee.com/lezen"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=lezen&button_colour=164e63&font_colour=ffffff&font_family=Arial&outline_colour=ffffff&coffee_colour=FFDD00" /></a></li>
           </ul>
           </div>
         </div>

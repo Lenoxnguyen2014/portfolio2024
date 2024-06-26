@@ -14,7 +14,7 @@ const Weather = ({ weatherMain, weatherDescription, weatherIconLink }: Weather) 
 
   return (
         <div>
-        <div className="max-w-sm rounded overflow-hidden shadow-lg h-64 bg-cyan-900 text-white">
+        <div className="w-96 max-h-screen rounded overflow-hidden shadow-lg h-64 bg-cyan-900 text-white">
             <motion.div
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}

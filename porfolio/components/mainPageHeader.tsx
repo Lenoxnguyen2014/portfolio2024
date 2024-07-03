@@ -4,7 +4,7 @@ import Porfolio from './porfolio'
 
 export default function MainHeader () {
   return (
-        <div className='w-full border'>
+        <div className='flex items-center px-[40%]'>
             <Porfolio />
         </div>
   )

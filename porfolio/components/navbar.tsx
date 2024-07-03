@@ -1,9 +1,10 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import Logo from '../src/logo-lezen.png'
 import Image from 'next/image'
-import { useState } from 'react'
+import { usePathname } from 'next/navigation'
+
 
 const NavBar = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false)
@@ -11,10 +12,13 @@ const NavBar = () => {
   const showMenu = () => {
     setHamburgerOpen(!hamburgerOpen)
   }
+
+  const pathname = usePathname()
+
   const links = [
-    { href: '/#projects', label: 'Projects' },
-    { href: '/#blogs', label: 'Blogs' },
-    { href: '/#myyoutube', label: 'My Youtube' }
+    { href: '/projects', label: 'Projects' },
+    { href: '/blogs', label: 'Blogs' },
+    { href: '/myyoutube', label: 'My Youtube' }
   ]
   return (
       <nav className={'bg-black border-gray-200 ' + (hamburgerOpen ? 'bg-black overscroll-y-none z-index: 10' : 'background-color: none')} >
@@ -32,7 +36,7 @@ const NavBar = () => {
         <ul className="sm:flex sm:space-x-4 max-sm:space-y-16">
         {links.map(({ href, label }) => (
               <li key={href} className="text-sm md:text-xl font-bold text-white pt-2">
-                <Link className="active:bg-sky-100" href={href} >{label}</Link>
+                <Link className={`inline-flex px-3 py-1.5 white hover:text-cyan-500 [&.active]:underline decoration-cyan-400 [&.active]:text-white ${pathname === `${href}` ? 'active' : ''}`} href={href}>{label}</Link>
               </li>
         ))}
             <li><a href="https://www.buymeacoffee.com/lezen"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=lezen&button_colour=164e63&font_colour=ffffff&font_family=Arial&outline_colour=ffffff&coffee_colour=FFDD00" /></a></li>

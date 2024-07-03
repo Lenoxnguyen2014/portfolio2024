@@ -1,7 +1,8 @@
-import React, { Children } from 'react'
+import React from 'react'
 import { getWeatherData } from '@/utils/callOpenApi'
 import Weather from '@/components/weather'
 import MainHeader from '@/components/mainPageHeader'
+
 export default async function Home () {
   const data = await getWeatherData()
   const weatherMain = data.current.weather[0].main
@@ -10,8 +11,10 @@ export default async function Home () {
   const weatherIconLink = `http://openweathermap.org/img/w/${weatherIcon}.png`
 
   return (
-    <div className='flex w-full'>
-      <Weather weatherMain={weatherMain} weatherDescription={weatherDescription} weatherIcon={weatherIcon} weatherIconLink={weatherIconLink} />
+    <div className='flex w-fullitems-center'>
+      <MainHeader />
+      {/* <Weather weatherMain={weatherMain} weatherDescription={weatherDescription} weatherIcon={weatherIcon} weatherIconLink={weatherIconLink} /> */}
+
     </div>
   )
 }

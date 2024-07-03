@@ -1,35 +1,28 @@
 'use client'
-import * as React from 'react'
-import { useSpring, animated, config } from '@react-spring/web'
-import styles from './styles.module.css'
 
-export default function Porfolio() {
-  const [{ background }] = useSpring(
-    () => ({
-      from: { background: '#b8afc7'},
-      to: [
-        { background: '#32a852' },
-        { background: '#a26fa6)' },
-        { background: '#4962d1' },
-        { background: '#468051' },
-        { background: '#5518ba' },
-      ],
-      config: config.molasses,
-      loop: {
-        reverse: true,
-      },
-    }),
-    []
-  )
+import React from 'react'
+import { motion } from 'framer-motion'
+import lezenio from '../src/lezenio.svg'
+import Image from 'next/image'
 
+export default function Porfolio () {
   return (
-    <div className={styles.container}>
-      <div className={styles.squares}>
-        <div className={styles.block} />
-        <div className={styles.block} />
-        <animated.div className={styles.block} style={{ background }} />
-      </div>
-      <animated.div className={styles.background} style={{ background }} />
-    </div>
+    <motion.div
+      className='flex items-center w-full h-full 1/2 bg-cyan-900'
+      animate={{
+        scale: [1, 2, 2, 1, 1],
+        rotate: [0, 0, 180, 180, 0],
+        borderRadius: ['0%', '0%', '50%', '50%', '0%']
+      }}
+      transition={{
+        duration: 2,
+        ease: 'easeInOut',
+        times: [0, 0.2, 0.5, 0.8, 1],
+        repeat: Infinity,
+        repeatDelay: 1
+      }}
+    >
+    <Image width={500} height={500} alt="lezen logo" src={lezenio}/>
+</motion.div>
   )
 }

@@ -11,7 +11,7 @@ export default async function Home () {
   const weatherIconLink = `http://openweathermap.org/img/w/${weatherIcon}.png`
 
   return (
-    <div className='flex w-fullitems-center'>
+    <div className='flex w-full items-center'>
       <MainHeader />
       {/* <Weather weatherMain={weatherMain} weatherDescription={weatherDescription} weatherIcon={weatherIcon} weatherIconLink={weatherIconLink} /> */}
 

@@ -2,14 +2,14 @@
 import * as React from 'react'
 import { motion } from "framer-motion"
 
-interface Weather {
+interface WeatherProps {
     weatherMain: string,
     weatherDescription?: string,
     weatherIcon: string,
     weatherIconLink: string
 }
 
-const Weather = ({ weatherMain, weatherDescription, weatherIconLink }: Weather) => {
+const Weather = ({ weatherMain, weatherDescription, weatherIconLink }: WeatherProps) => {
   const weatherState = 'Today: '
 
   return (

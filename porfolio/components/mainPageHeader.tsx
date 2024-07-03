@@ -4,7 +4,7 @@ import Porfolio from './porfolio'
 
 export default function MainHeader () {
   return (
-        <div className='flex items-center px-[40%]'>
+        <div className='flex items-center px-[40%] py-48'>
             <Porfolio />
         </div>
   )

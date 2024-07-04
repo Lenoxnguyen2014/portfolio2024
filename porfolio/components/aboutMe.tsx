@@ -38,13 +38,13 @@ export default function AboutMe (props: infoAboutMe) {
     const content = item.content[0].value.split('')
     parseContentIntro.push(content)
   })
-  console.log(props.contentIntro)
+
   return (
         <div className=' mx-24 flex flex-col items-center text-white'>
             <div className='grid grid-cols-2 w-full'>
                 <motion.div className="w-full max-w-sm bg-white border border-cyan-200 rounded-lg shadow"
-                   animate={{ x: 150 }}
-                   transition={{ ease: 'easeOut', duration: 2 }}
+                    animate={{ x: 150 }}
+                    transition={{ ease: 'easeOut', duration: 2 }}
                 >
                     <div className="flex justify-end px-4 pt-4">
                 <button id="dropdownButton" data-dropdown-toggle="dropdown" className="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg text-sm p-1.5" type="button">
@@ -62,8 +62,8 @@ export default function AboutMe (props: infoAboutMe) {
                     <EachImage images={parsePhotos}/>
                 </motion.div>
                 <motion.div
-                  animate={{ x: -100 }}
-                  transition={{ ease: 'easeOut', duration: 2 }}
+                    animate={{ x: -100 }}
+                    transition={{ ease: 'easeOut', duration: 2 }}
                 >
                     {parseContentIntro.map((el, i) => (
                     <motion.span

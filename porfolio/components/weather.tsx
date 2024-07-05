@@ -9,7 +9,7 @@ interface WeatherProps {
     weatherIconLink: string
 }
 
-const Weather = ({ weatherMain, weatherDescription, weatherIconLink }: WeatherProps) => {
+const pWeather = ({ weatherMain, weatherDescription, weatherIconLink }: WeatherProps) => {
   const weatherState = 'Today: '
 
   return (

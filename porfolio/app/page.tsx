@@ -15,6 +15,7 @@ export default async function Home () {
   const gallery = aboutMe.gallery
   const intro = aboutMe.intro
   const content = aboutMe.content_intro.content
+  const headline = aboutMe.headline
   // const weatherMain = data.current.weather[0].main
   // const weatherDescription = data.current.weather[0].description
   // const weatherIcon = data.current.weather[0].icon
@@ -23,7 +24,7 @@ export default async function Home () {
   return (
     <div className='flex w-full items-center flex-col mx-8'>
       <MainHeader />
-      <AboutMe introTitle={introTitle} gallery={gallery} intro={intro} contentIntro={content} />
+      <AboutMe introTitle={introTitle} gallery={gallery} intro={intro} contentIntro={content} headline={headline} />
       {/* <Weather weatherMain={weatherMain} weatherDescription={weatherDescription} weatherIcon={weatherIcon} weatherIconLink={weatherIconLink} /> */}
     </div>
   )

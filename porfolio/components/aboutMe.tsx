@@ -4,12 +4,14 @@ import { motion, Variants } from 'framer-motion'
 import Image from 'next/image'
 import EachImage from './eachImage'
 import myProfile from '../src/my_profile.jpg'
+import MyHeader from './pageHeader'
 
 interface infoAboutMe {
     intro: string | null
     introTitle: string | null
     gallery: [] | null
     contentIntro: [] | null
+    headline: string | null
 }
 
 const parentVariant: Variants = {
@@ -42,8 +44,8 @@ export default function AboutMe (props: infoAboutMe) {
   return (
         <div className=' mx-24 flex flex-col items-center text-white'>
             <div className='grid grid-cols-2 w-full'>
-                <motion.div className="w-full max-w-sm bg-white border border-cyan-200 rounded-lg shadow"
-                    animate={{ x: 150 }}
+                <motion.div className="w-full max-w-md bg-white border border-cyan-200 rounded-lg shadow"
+                    animate={{ x: 100 }}
                     transition={{ ease: 'easeOut', duration: 2 }}
                 >
                     <div className="flex justify-end px-4 pt-4">
@@ -72,6 +74,7 @@ export default function AboutMe (props: infoAboutMe) {
                     animate={{ x: -100 }}
                     transition={{ ease: 'easeOut', duration: 2 }}
                 >
+                    <MyHeader title={props.headline} subTitle=""/>
                     {parseContentIntro.map((el, i) => (
                     <motion.span
                     initial={{ opacity: 0 }}

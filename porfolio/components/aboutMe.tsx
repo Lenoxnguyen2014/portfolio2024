@@ -45,7 +45,7 @@ export default function AboutMe (props: infoAboutMe) {
         <div className=' mx-24 flex flex-col items-center text-white'>
             <div className='grid grid-cols-2 w-full'>
                 <motion.div className="w-full max-w-md bg-white border border-cyan-200 rounded-lg shadow"
-                    animate={{ x: 100 }}
+                    animate={{ x: '20%' }}
                     transition={{ ease: 'easeOut', duration: 2 }}
                 >
                     <div className="flex justify-end px-4 pt-4">
@@ -71,10 +71,11 @@ export default function AboutMe (props: infoAboutMe) {
                     <EachImage images={parsePhotos}/>
                 </motion.div>
                 <motion.div
-                    animate={{ x: -100 }}
+                    animate={{ x: '-10%' }}
                     transition={{ ease: 'easeOut', duration: 2 }}
                 >
                     <MyHeader title={props.headline} subTitle=""/>
+                    <br />
                     {parseContentIntro.map((el, i) => (
                     <motion.span
                     initial={{ opacity: 0 }}

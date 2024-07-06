@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import { formatDate } from '@/lib/formatDate'
 import { getAllProjectEntry } from '@/utils/callContentful'
 
 const MyProjects = async () => {
@@ -16,9 +15,6 @@ const MyProjects = async () => {
               <img className="flex w-full" src={thumbnailLink} width={250}/>
                 <div>
                   <h2 className="font-bold text-xl">{name}</h2>
-                  <span>
-                    Posted on {formatDate(date)}
-                  </span>
                 </div>
               </Link>
             </div>

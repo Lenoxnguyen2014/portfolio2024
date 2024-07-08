@@ -19,7 +19,7 @@
     "@vercel/speed-insights": "^1.0.10",
     "contentful": "^10.12.7",
     "flubber": "^0.4.2",
-    "framer-motion": "^11.2.11",
+    "framer-motion": "^11.2.13",
     "next": "14.1.0",
     "react": "^18",
     "react-dnd": "^16.0.1",
@@ -28,7 +28,9 @@
     "react-geocode": "^1.0.0-alpha.1",
     "react-grid-gallery": "^1.0.1",
     "react-image-lightbox": "^5.1.4",
+    "react-intersection-observer": "^9.10.3",
     "react-type-animation": "^3.2.0",
+    "uuid": "^10.0.0",
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {

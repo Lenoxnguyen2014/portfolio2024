@@ -1,5 +1,7 @@
 import React from 'react'
 import { getPerBlogEntry } from '@/utils/callContentful'
+import Image from 'next/image'
+import { v4 as uuidv4 } from 'uuid'
 
 type BlogPageProps = {
     params: {
@@ -17,22 +19,42 @@ const Blog = async (props: BlogPageProps) => {
   const content = blog.items[0].fields.content.content[0].content[0].value
 
   return (
-        <main className="block sm:md:flex sm:m-20 sm:pb-16 sm:lg:pt-16 sm:lg:pb-24 rounded-lg bg-cyan-700  ">
-       <figure className="sm:pt-5 pt-20 sm:pl-10 pl-5 sm:max-w-lg max-w-80">
-            <img className="h-auto sm:max-w-lg max-w-80 rounded-lg" src={imgSrc} />
-        </figure>
+        <main className="flex flex-col sm:md:flex sm:m-20 sm:pb-16 sm:lg:pt-16 sm:lg:pb-24 rounded-lg bg-gray-300  ">
+        <div className='flex flex-row'>
+            <figure className="sm:pt-5 pt-20 sm:pl-10 pl-5 sm:max-w-lg max-w-80 ml-8">
+                <img className="h-auto sm:max-w-lg max-w-80 rounded-lg" src={imgSrc} />
+            </figure>
+            <div>
+                <h1 className="m-24 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl">{title} </h1>
+
+            </div>
+        </div>
         <div className="sm:p-20 p-5">
-            <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">{title} </h1>
             <div className="rounded-lg bg-gray-200 p-2 w-30 border">
             <p>{author} </p>
             <p>{categoryName}</p>
             </div>
             <br/>
-            <p>{content}</p>
             <p>
             {
                 blog.items[0].fields.content.content.map((i) => {
-                  return i.content[0].value
+                  const id = uuidv4()
+                  if (i.nodeType == 'paragraph') {
+                    return (
+                        <div key={id}>
+                            <p>{i.content[0].value}</p>
+                            <br />
+                        </div>
+                    )
+                  } else if (i.nodeType == 'embedded-asset-block') {
+                    const imagelink = i.data.target.fields.file.url
+                    return (
+                        <div key={id + 'photo'}>
+                            <img src={imagelink} />
+                            <br/>
+                        </div>
+                    )
+                  }
                 })
             }
             </p>

@@ -1,6 +1,5 @@
 import React from 'react'
 import { getPerBlogEntry } from '@/utils/callContentful'
-import Image from 'next/image'
 import { v4 as uuidv4 } from 'uuid'
 
 type BlogPageProps = {
@@ -10,16 +9,16 @@ type BlogPageProps = {
 }
 
 const Blog = async (props: BlogPageProps) => {
+    
   const id = props.params.id
   const blog = await getPerBlogEntry(id)
   const title = blog.items[0].fields.title
   const author = blog.items[0].fields.authorName
   const categoryName = blog.items[0].fields.categoryName
   const imgSrc = blog.items[0].fields.thumbnail.fields.file.url
-  const content = blog.items[0].fields.content.content[0].content[0].value
 
   return (
-        <main className="flex flex-col sm:md:flex sm:m-20 sm:pb-16 sm:lg:pt-16 sm:lg:pb-24 rounded-lg bg-gray-300  ">
+        <main className="flex flex-col sm:md:flex sm:m-20 sm:pb-16 sm:lg:pt-16 sm:lg:pb-24 rounded-lg bg-gray-300 ">
         <div className='flex flex-row'>
             <figure className="sm:pt-5 pt-20 sm:pl-10 pl-5 sm:max-w-lg max-w-80 ml-8">
                 <img className="h-auto sm:max-w-lg max-w-80 rounded-lg" src={imgSrc} />

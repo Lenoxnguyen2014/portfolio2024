@@ -30,8 +30,8 @@ const Project = async (props: ProjectPageProps) => {
   })
 
   return (
-        <main className="flex flex-row m-36 mx-48 rounded-lg text-white ">
-            <div className='text-white w-1/2'>
+        <main className="flex flex-row m-36 mx-48 rounded-lg text-white max-sm:mx-10">
+            <div className='text-white w-1/2 max-sm:w-full'>
             <h1 className="text-3xl md:text-4xl font-medium mb-2 bg-cyan-900"> {title} </h1>
                 <br />
                 <p>{description}</p>
@@ -39,7 +39,7 @@ const Project = async (props: ProjectPageProps) => {
                     <h4 className='text-xl'>Project: <Link className="underline white"href={link}>Link </Link></h4>
 
             </div>
-            <div className='w-1/2 items-center'>
+            <div className='w-1/2 items-center max-sm:w-full'>
             { parsePhotos.length > 1 ? <EachImage images={parsePhotos} /> : <img className='w-full' src={featureImage} width={300} height={300} alt="Picture of the dev"/>
 }
             </div>

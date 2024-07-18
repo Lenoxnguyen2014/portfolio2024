@@ -22,7 +22,7 @@ export default async function Home () {
   // const weatherIconLink = `http://openweathermap.org/img/w/${weatherIcon}.png`
 
   return (
-    <div className='flex w-full items-center flex-col mx-8'>
+    <div className='flex w-full items-center flex-col mx-8 max-sm:mx-0'>
       <MainHeader />
       <AboutMe introTitle={introTitle} gallery={gallery} intro={intro} contentIntro={content} headline={headline} />
       {/* <Weather weatherMain={weatherMain} weatherDescription={weatherDescription} weatherIcon={weatherIcon} weatherIconLink={weatherIconLink} /> */}

@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { motion, Variants } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import EachImage from './eachImage'
 import myProfile from '../src/my_profile.jpg'
@@ -9,20 +9,11 @@ import MyHeader from './pageHeader'
 interface infoAboutMe {
     intro: string | null
     introTitle: string | null
-    gallery: [] | null
+    gallery: []
     contentIntro: [] | null
     headline: string | null
 }
 
-const parentVariant: Variants = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { staggerChildren: 1 } }
-}
-
-const childrenVariant: Variants = {
-  initial: { opacity: 0, x: 50 },
-  animate: { opacity: 1, x: 0 }
-}
 export default function AboutMe (props: infoAboutMe) {
   const parsePhotos: Image = []
   props.gallery.map((item) => {

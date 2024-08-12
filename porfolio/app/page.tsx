@@ -4,6 +4,7 @@ import { getIntroAboutMe } from '@/utils/callContentful'
 import MainHeader from '@/components/mainPageHeader'
 import AboutMe from '@/components/aboutMe'
 import Weather from '@/components/weather'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 
 export default async function Home () {
@@ -26,6 +27,7 @@ export default async function Home () {
       <MainHeader />
       <AboutMe introTitle={introTitle} gallery={gallery} intro={intro} contentIntro={content} headline={headline} />
       {/* <Weather weatherMain={weatherMain} weatherDescription={weatherDescription} weatherIcon={weatherIcon} weatherIconLink={weatherIconLink} /> */}
+      <GoogleAnalytics gaId="G-FMFWNCYELS" />
     </div>
   )
 }

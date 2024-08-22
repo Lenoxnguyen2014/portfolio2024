@@ -1,6 +1,6 @@
 'use client'
-import React, { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
+import React, { useEffect, useRef, useState } from 'react'
+import { motion, useScroll } from 'framer-motion'
 import Image from 'next/image'
 import EachImage from './eachImage'
 import myProfile from '../src/my_profile.jpg'
@@ -15,6 +15,11 @@ interface infoAboutMe {
 }
 
 export default function AboutMe (props: infoAboutMe) {
+  const ref = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start","end end"]
+  })
   const [isClient, setIsClient] = useState(false)
   useEffect(() => {
     setIsClient(true)
@@ -22,6 +27,7 @@ export default function AboutMe (props: infoAboutMe) {
   let galleryBox = {}
   let introBox = {}
   const parsePhotos: Image = []
+
   props.gallery.map((item) => {
     const itemObject = {
       src: item.fields.file.url,
@@ -34,14 +40,7 @@ export default function AboutMe (props: infoAboutMe) {
   if (typeof window !== 'undefined') {
     const isMobile = window.innerWidth < 768
     if (!isMobile) {
-      galleryBox = {
-        visible: { opacity: 1, y: '10%' },
-        hidden: { opacity: 0, y: 40 }
-      }
-      introBox = {
-        visible: { opacity: 1, y: '-10%' },
-        hidden: { opacity: 0, x: 10 }
-      }
+
     }
   }
   const parseContentIntro = []
@@ -50,16 +49,16 @@ export default function AboutMe (props: infoAboutMe) {
     parseContentIntro.push(content)
   })
   return (
-      <div className=' mx-48 flex flex-col items-center text-white max-sm:mx-0'>
+      <div ref={ref} className=' mx-48 flex flex-col items-center text-white max-sm:mx-0'>
         {isClient
-          ? <div className='flex items-center flex-col w-full max-sm:grid-cols-1'>
+          ? <motion.div className='flex items-center flex-col w-full max-sm:grid-cols-1'>
               <EachImage images={parsePhotos}/>
               <motion.div
                   variants={introBox}
                   initial="hidden"
                   animate="visible"
                   transition= {{ ease: 'easeOut', duration: 2 }}
-                  className='p-8'
+                  className='px-[10vw]'
               >
                   <MyHeader title={props.headline} subTitle=""/>
                   <br />
@@ -69,7 +68,7 @@ export default function AboutMe (props: infoAboutMe) {
                   animate={{ opacity: 1 }}
                   transition={{
                     duration: 0.25,
-                    delay: i / 10
+                    delay: i / 20
                   }}
                   key={i}
                   >
@@ -87,7 +86,7 @@ export default function AboutMe (props: infoAboutMe) {
                     </div>
                     </button>
                   </a>
-          </div>
+          </motion.div>
           : <></>}
       </div>
   )

@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { getWeatherData } from '@/utils/callOpenApi'
 import { getIntroAboutMe } from '@/utils/callContentful'
-import MainHeader from '@/components/mainPageHeader'
-import AboutMe from '@/components/aboutMe'
-import Weather from '@/components/weather'
+import Loading from '@/components/loading'
 import { GoogleAnalytics } from '@next/third-parties/google'
 
+const AboutMePreview = lazy(() => delayForDemo(import('../components/aboutMe')))
 
+function delayForDemo(promise: Promise<typeof import("../components/aboutMe")>) {
+  return new Promise(resolve => {
+    setTimeout(resolve, 2000);
+  }).then(() => promise);
+}
 export default async function Home () {
   const data = await getWeatherData()
   const introAboutMe = await getIntroAboutMe()
@@ -17,17 +21,13 @@ export default async function Home () {
   const intro = aboutMe.intro
   const content = aboutMe.content_intro.content
   const headline = aboutMe.headline
-  // const weatherMain = data.current.weather[0].main
-  // const weatherDescription = data.current.weather[0].description
-  // const weatherIcon = data.current.weather[0].icon
-  // const weatherIconLink = `http://openweathermap.org/img/w/${weatherIcon}.png`
-
+  
   return (
-    <div className='flex w-full items-center flex-col mx-8 max-sm:mx-0'>
-      <MainHeader />
-      <AboutMe introTitle={introTitle} gallery={gallery} intro={intro} contentIntro={content} headline={headline} />
-      {/* <Weather weatherMain={weatherMain} weatherDescription={weatherDescription} weatherIcon={weatherIcon} weatherIconLink={weatherIconLink} /> */}
+    <Suspense fallback={<Loading />} className='flex w-full items-center flex-col mx-8 max-sm:mx-0'>
+      <AboutMePreview introTitle={introTitle} gallery={gallery} intro={intro} contentIntro={content} headline={headline} />
       <GoogleAnalytics gaId="G-FMFWNCYELS" />
-    </div>
+    </Suspense>
   )
 }
+
+

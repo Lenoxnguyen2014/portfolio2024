@@ -28,7 +28,7 @@ export default async function RootLayout ({
         <header>
           <NavBar />
         </header>
-        <div className='mb-24'>
+        <div className=''>
           {children}
         </div>
         <footer className="sticky top-[100vh]">

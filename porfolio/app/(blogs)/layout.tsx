@@ -4,7 +4,7 @@ import MyHeader from '@/components/pageHeader'
 const Blogs = ({ children }) => {
   return (
         <div>
-            <MyHeader title="Blogs" subTitle="Technical blogs"/>
+            <MyHeader title="Blogs" subTitle="Get latest insights and tips"/>
             { children }
         </div>
   )

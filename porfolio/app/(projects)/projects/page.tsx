@@ -5,7 +5,7 @@ import { getAllProjectEntry } from '@/utils/callContentful'
 const MyProjects = async () => {
   const projects = await getAllProjectEntry()
   return (
-        <main className="grid grid-cols-2 gap-4 m-32 max-sm:grid-cols-1 max-sm:mx-2 max-sm:m-2 ">
+        <main className="grid grid-cols-2 gap-4 mx-32 max-sm:grid-cols-1 max-sm:mx-2 max-sm:m-2 ">
         {projects.items.map((singlePost) => {
           const { id, slug, name, featureImage, tags } = singlePost.fields
           const thumbnailLink = `https:${featureImage.fields.file.url}`

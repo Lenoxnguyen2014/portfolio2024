@@ -10,7 +10,7 @@ interface MyPageHeader {
 
 const MyHeader = (props: MyPageHeader) => {
   return (
-        <div className="flex items-center justify-center ">
+        <div className="flex items-center justify-center">
             <h1 className="text-3xl font-extrabold text-gray-900 text-white md:text-5xl lg:text-6xl max-sm:mx-10 max-sm:my-0"><span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">{props.title}</span> {props.subTitle}</h1>
                 {props.subLink &&
                     <Link href={props.subLink} target={'_blank'}>

@@ -8,7 +8,7 @@ const AboutMePreview = lazy(() => delayForDemo(import('../components/aboutMe')))
 
 function delayForDemo(promise: Promise<typeof import("../components/aboutMe")>) {
   return new Promise(resolve => {
-    setTimeout(resolve, 600000);
+    setTimeout(resolve, 2000);
   }).then(() => promise);
 }
 export default async function Home () {

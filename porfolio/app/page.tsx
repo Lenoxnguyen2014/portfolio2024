@@ -23,7 +23,7 @@ export default async function Home () {
   const headline = aboutMe.headline
 
   return (
-    <Suspense fallback={<Loading />} className='flex w-full items-center flex-col mx-8 max-sm:mx-0'>
+    <Suspense fallback={<Loading />} className='flex w-full items-center flex-col max-sm:mx-0'>
       <AboutMePreview introTitle={introTitle} gallery={gallery} intro={intro} contentIntro={content} headline={headline} />
       <GoogleAnalytics gaId="G-FMFWNCYELS" />
     </Suspense>

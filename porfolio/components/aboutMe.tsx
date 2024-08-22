@@ -49,7 +49,7 @@ export default function AboutMe (props: infoAboutMe) {
     parseContentIntro.push(content)
   })
   return (
-      <div ref={ref} className=' mx-48 flex flex-col items-center text-white max-sm:mx-0'>
+      <div ref={ref} className='w-full flex flex-col items-center text-white sm:mx-8'>
         {isClient
           ? <motion.div className='flex items-center flex-col w-full max-sm:grid-cols-1'>
               <EachImage images={parsePhotos}/>
@@ -58,7 +58,7 @@ export default function AboutMe (props: infoAboutMe) {
                   initial="hidden"
                   animate="visible"
                   transition= {{ ease: 'easeOut', duration: 2 }}
-                  className='px-[10vw]'
+                  className='px-[19.5vw] max-sm:px-4'
               >
                   <MyHeader title={props.headline} subTitle=""/>
                   <br />
@@ -75,17 +75,18 @@ export default function AboutMe (props: infoAboutMe) {
                   {el}{' '}
                   </motion.span>
                   ))}
-                  <br/>
               </motion.div>
+              <p className='mt-8'>
               <a href='/resume.pdf' target="_blank">
-                    <button data-tooltip-target="tooltip" className="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg  bg-white text-sm p-1.5" type="button">
-                    <div className="flex">
+                    <button data-tooltip-target="tooltip" className="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg  bg-cyan border text-sm" type="button">
+                    <div className="flex p-4">
                       <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#54808C"><path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/>
                       </svg>
-                      Download my resume
+                        Download my resume
                     </div>
                     </button>
                   </a>
+                </p>
           </motion.div>
           : <></>}
       </div>

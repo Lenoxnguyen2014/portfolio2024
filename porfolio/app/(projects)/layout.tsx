@@ -3,8 +3,8 @@ import MyHeader from '@/components/pageHeader'
 
 const Projects = ({ children }) => {
   return (
-        <div>
-            <MyHeader title="Projects" subTitle="My work experience"/>
+        <div className='px-48'>
+            <MyHeader title="Projects" subTitle="and fun hackathons"/>
             { children }
         </div>
   )

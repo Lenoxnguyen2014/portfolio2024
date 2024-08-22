@@ -27,7 +27,7 @@ export default function EachImage (props: ImagesPhotos) {
         onClick={handleClick}
         enableImageSelection={false}
       />
-        <div className='italic text-white'>@Lezen io</div>
+        <div className='italic text-black'>@Lezen io</div>
       {!!currentImage && (
         <Lightbox
           mainSrc={currentImage.src}

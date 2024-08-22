@@ -8,7 +8,7 @@ const AboutMePreview = lazy(() => delayForDemo(import('../components/aboutMe')))
 
 function delayForDemo(promise: Promise<typeof import("../components/aboutMe")>) {
   return new Promise(resolve => {
-    setTimeout(resolve, 2000);
+    setTimeout(resolve, 6000);
   }).then(() => promise);
 }
 export default async function Home () {
@@ -21,7 +21,7 @@ export default async function Home () {
   const intro = aboutMe.intro
   const content = aboutMe.content_intro.content
   const headline = aboutMe.headline
-  
+
   return (
     <Suspense fallback={<Loading />} className='flex w-full items-center flex-col mx-8 max-sm:mx-0'>
       <AboutMePreview introTitle={introTitle} gallery={gallery} intro={intro} contentIntro={content} headline={headline} />

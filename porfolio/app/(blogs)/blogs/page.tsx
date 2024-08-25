@@ -6,7 +6,7 @@ import { getAllBlogsEntries } from '@/utils/callContentful'
 const MyBlogs = async () => {
   const blogs = await getAllBlogsEntries()
   return (
-        <main className="grid grid-cols-3 gap-4 mx-48 max-sm:grid-cols-1 max-sm:m-2">
+        <main className="grid xl:grid-cols-3 gap-4 max-xl:mx-48 max-lg:mx-8 max-sm:grid-cols-1 max-md:m-2 max-lg:grid-cols-2 max-md:m-8">
         {blogs.items.map((singlePost) => {
           const { id, slug, title, date, thumbnail, authorName, categoryName, sum } = singlePost.fields
           const thumbnailLink = `https:${thumbnail.fields.file.url}`

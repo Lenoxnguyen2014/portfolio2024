@@ -4,7 +4,8 @@ import EachImage from '@/components/eachImage'
 import Image from 'next/image'
 import Link from 'next/link'
 import { parseISO, format } from 'date-fns'
-
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { renderOptions } from '@/lib/formatContent'
 
 type ProjectPageProps = {
     params: {
@@ -21,6 +22,12 @@ const Project = async (props: ProjectPageProps) => {
   const description = project.items[0].fields.description
   const categoryName = project.items[0].fields.tags
   const date = format(parseISO(project.items[0].fields.date), 'LLLL d, yyyy')
+  const goal = project.items[0].fields.goal
+  const challenge = project.items[0].fields.challenge
+  const solution = project.items[0].fields.solution
+  const techstack = project.items[0].fields.techstack
+  console.log(techstack)
+  const result = project.items[0].fields.result
   const parsePhotos: Image = []
   const link = project.items[0].fields.github_link
   project.items[0].fields.gallery.map((item) => {
@@ -64,11 +71,37 @@ const Project = async (props: ProjectPageProps) => {
               <div className='items-center max-sm:w-full'>
                 { parsePhotos.length > 1 ?
                   <div>
-                    <h3 className='text-2xl bold'>GALLERY</h3>
+                    <h3 className='text-2xl bold text-secondary'>GALLERY</h3>
                     <EachImage images={parsePhotos} /> 
                   </div>
                   : 
-                <></>}
+                <div className='text-5xl mt-8'>
+                  Concept, Design, and Development. All-in-one.
+                </div>
+                }
+              </div>
+              <div className='w-full block py-8'>
+                  <div className='border border-teal-700  p-8 mb-8 ml-8'>
+                    <h3 className='underline'>GOAL</h3>
+                    {documentToReactComponents(goal, renderOptions)}
+                  </div>
+                  <div className='border border-teal-700 p-8 ml-8 mb-8'>
+                    <h3 className='underline'>CHALLENGE</h3>
+                    {documentToReactComponents(challenge, renderOptions)}
+                  </div>
+                  <div className='border border-teal-700  p-8 ml-8 mb-8'>
+                    <h3 className='underline'>SOLUTION</h3>
+                    {documentToReactComponents(solution, renderOptions)}
+                  </div>
+                  <div className='border border-teal-700  p-8 ml-8 mb-8'>
+                    <h3 className='underline'>RESULT</h3>
+                    {documentToReactComponents(result, renderOptions)}
+                  </div>
+                  <div className='p-2 justify-between flex-wrap ml-8'>
+                    {techstack.map((i) => 
+                      <button className='bg-teal-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 m-2'>{i}
+                      </button> )}
+              </div>
               </div>
             </div>
         </main>

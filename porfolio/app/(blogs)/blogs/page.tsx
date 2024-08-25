@@ -22,7 +22,7 @@ const MyBlogs = async () => {
                 <span>
                     {formatDate(date)}
                   </span>
-                  <p className='border border-teal-700 p-2 w-16 '> {categoryName.toLowerCase()}</p>
+                  <p className='border border-teal-700 p-2 w-16'> {categoryName.toLowerCase()}</p>
                   <h2 className="text-lg text-primary">{title}</h2>
                   <br/>
                   <p className="text-ellipsis overflow-hidden "> {sum} </p>

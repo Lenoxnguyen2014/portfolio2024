@@ -18,7 +18,7 @@ const MyProjects = async () => {
               <img className="h-[500px] w-full object-cover rounded-md" src={thumbnailLink} width={250}/>
               <div className="absolute inset-0 bg-black opacity-40 rounded-md hover:opacity-0 "></div>
                 <div className="absolute bottom-10 right-5 left-5 flex items-center justify-center">
-                  <div className="border-slate-200  w-full p-4 bg-black/30 backdrop-blur-lg text-primary ">
+                  <div className="border-cyan-500 flex justify-between border w-full p-4 bg-black/30 backdrop-blur-lg text-primary ">
                     <h2 className='text-xl'>{name} </h2>
                     <h4>{tags} </h4>
                     </div>

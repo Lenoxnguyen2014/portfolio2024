@@ -5,12 +5,14 @@ import Image from 'next/image'
 import EachImage from './eachImage'
 import myProfile from '../src/my_profile.jpg'
 import MyHeader from './pageHeader'
+import { renderOptions } from '@/lib/formatContent'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 interface infoAboutMe {
     intro: string | null
     introTitle: string | null
     gallery: []
-    contentIntro: [] | null
+    contentIntro: {}
     headline: string | null
 }
 
@@ -43,11 +45,8 @@ export default function AboutMe (props: infoAboutMe) {
 
     }
   }
-  const parseContentIntro = []
-  props.contentIntro.map((item) => {
-    const content = item.content[0].value.split('')
-    parseContentIntro.push(content)
-  })
+
+  console.log(props.contentIntro)
   return (
       <div ref={ref} className='w-full flex flex-col items-center text-white sm:mx-8'>
         {isClient
@@ -58,23 +57,12 @@ export default function AboutMe (props: infoAboutMe) {
                   initial="hidden"
                   animate="visible"
                   transition= {{ ease: 'easeOut', duration: 2 }}
-                  className='px-[19.5vw] max-sm:px-4'
-              >
+                  className='px-[19.5vw] max-sm:px-4'>
                   <MyHeader title={props.headline} subTitle=""/>
                   <br />
-                  {parseContentIntro.map((el, i) => (
-                  <motion.span
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{
-                    duration: 0.25,
-                    delay: i / 20
-                  }}
-                  key={i}
-                  >
-                  {el}{' '}
-                  </motion.span>
-                  ))}
+                  <motion.div className='md:mx-8'>
+                    {documentToReactComponents( props.contentIntro, renderOptions)}
+                  </motion.div>
               </motion.div>
               <p className='mt-8'>
               <a href='/resume.pdf' target="_blank">

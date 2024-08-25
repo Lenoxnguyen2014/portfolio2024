@@ -19,7 +19,7 @@ export default async function Home () {
   const introTitle = aboutMe.introTitle
   const gallery = aboutMe.gallery
   const intro = aboutMe.intro
-  const content = aboutMe.content_intro.content
+  const content = aboutMe.content_intro
   const headline = aboutMe.headline
 
   return (

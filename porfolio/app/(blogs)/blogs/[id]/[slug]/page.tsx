@@ -33,22 +33,22 @@ const Blog = async (props: BlogPageProps) => {
                 </div>
             </div>
         <div className='grid grid-cols-3 gap-8 m-2 max-sm:grid-cols-1 max-sm:gap-2'>
-        <div className='border border-teal-700 p-4 flex justify-between'>
-            <p>DATE</p> 
-            <p>{date}</p>
-        </div>
-        <div className='border border-teal-700 p-4 flex justify-between'>
+            <div className='border border-teal-700 p-4 flex justify-between'>
+                <p>DATE</p> 
+                <p>{date}</p>
+            </div>
+            <div className='border border-teal-700 p-4 flex justify-between'>
             <p>CATEGORY</p>
             <p>{categoryName}</p>
-        </div>
-        <div className='border border-teal-700 p-4 flex justify-between'>
+            </div>
+            <div className='border border-teal-700 p-4 flex justify-between'>
             <p>READING TIME</p>
             <p>2 mins</p>
-        </div>
+            </div>
         </div>
         <figure className="my-8">
                 <img className="h-auto w-full" src={imgSrc} />
-            </figure>
+        </figure>
         <div className="m-32 max-sm:m-0">
             <div>
                 {documentToReactComponents(content, renderOptions)}

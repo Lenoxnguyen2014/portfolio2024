@@ -20,7 +20,7 @@ const NavBar = () => {
     { href: '/myyoutube', label: 'My Youtube' }
   ]
   return (
-      <nav className='bg-black border-gray-200 '>
+      <nav className='bg-dark border-gray-200 '>
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
         <a href="/">
           <Image src={Logo} alt="logo" className="h-36 w-36"/>
@@ -31,7 +31,7 @@ const NavBar = () => {
               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
             </svg>
         </button>
-        <motion.div className={'w-screen relative max-sm:static z-10 max-sm:bg-black sm:flex sm:items-center sm:w-auto max-sm:h-screen max-sm:m-24 max-sm:text-lg' + (hamburgerOpen ? ' flex' : ' hidden')}>
+        <motion.div className={'w-screen relative max-sm:static z-10 max-sm:bg-dark sm:flex sm:items-center sm:w-auto max-sm:h-screen max-sm:m-24 max-sm:text-lg' + (hamburgerOpen ? ' flex' : ' hidden')}>
         <ul className="sm:flex sm:space-x-4 max-sm:space-y-16 max-sm:w-full">
         {links.map(({ href, label }) => (
               <li key={href} className="text-sm md:text-xl font-bold text-white pt-2 max-sm:text-lg">

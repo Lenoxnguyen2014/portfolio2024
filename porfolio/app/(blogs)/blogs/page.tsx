@@ -2,10 +2,13 @@ import React from 'react'
 import Link from 'next/link'
 import { formatDate } from '@/lib/formatDate'
 import { getAllBlogsEntries } from '@/utils/callContentful'
+import MyHeader from '@/components/pageHeader'
 
 const MyBlogs = async () => {
   const blogs = await getAllBlogsEntries()
   return (
+        <div>
+          <MyHeader title="Blogs" subTitle="Get latest insights and tips"/>
         <main className="grid xl:grid-cols-3 gap-4 max-xl:mx-48 max-lg:mx-8 max-sm:grid-cols-1 max-md:m-2 max-lg:grid-cols-2 max-md:m-8">
         {blogs.items.map((singlePost) => {
           const { id, slug, title, date, thumbnail, authorName, categoryName, sum } = singlePost.fields
@@ -28,6 +31,7 @@ const MyBlogs = async () => {
           )
         })}
       </main>
+      </div>
   )
 }
 

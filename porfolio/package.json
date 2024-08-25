@@ -11,6 +11,7 @@
   "dependencies": {
     "@cascadia-code/scroll-to-hash-element": "^2.0.2",
     "@contentful/rich-text-html-renderer": "^16.6.1",
+    "@contentful/rich-text-react-renderer": "^15.22.9",
     "@next/third-parties": "^14.2.5",
     "@prisma/client": "^5.10.2",
     "@react-spring/parallax": "^9.7.3",
@@ -20,6 +21,7 @@
     "@vercel/speed-insights": "^1.0.10",
     "caniuse-lite": "^1.0.30001651",
     "contentful": "^10.3.7",
+    "date-fns": "^3.6.0",
     "flubber": "^0.4.2",
     "framer-motion": "^11.2.13",
     "next": "^14.2.5",

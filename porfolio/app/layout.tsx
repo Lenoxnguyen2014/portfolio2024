@@ -24,7 +24,7 @@ export default async function RootLayout ({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-screen max-w-full bg-black`} >
+      <body className={`${inter.className} min-h-screen max-w-full bg-dark`} >
         <header>
           <NavBar />
         </header>

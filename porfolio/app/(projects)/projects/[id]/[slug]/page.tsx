@@ -67,7 +67,7 @@ const Project = async (props: ProjectPageProps) => {
             <figure className="my-8">
                 <img className="h-auto w-full" src={featureImage} />
             </figure>
-            <div className="max-sm:m-0 w-full grid grid-cols-2">
+            <div className="max-sm:m-0 w-full grid grid-cols-2 max-sm:grid-cols-1">
               <div className='items-center max-sm:w-full'>
                 { parsePhotos.length > 1 ?
                   <div>
@@ -81,23 +81,23 @@ const Project = async (props: ProjectPageProps) => {
                 }
               </div>
               <div className='w-full block py-8'>
-                  <div className='border border-teal-700  p-8 mb-8 ml-8'>
+                  <div className='border border-teal-700 p-8 mb-8 ml-8 max-sm:ml-0'>
                     <h3 className='underline'>GOAL</h3>
                     {documentToReactComponents(goal, renderOptions)}
                   </div>
-                  <div className='border border-teal-700 p-8 ml-8 mb-8'>
+                  <div className='border border-teal-700 p-8 ml-8 mb-8 max-sm:ml-0'>
                     <h3 className='underline'>CHALLENGE</h3>
                     {documentToReactComponents(challenge, renderOptions)}
                   </div>
-                  <div className='border border-teal-700  p-8 ml-8 mb-8'>
+                  <div className='border border-teal-700  p-8 ml-8 mb-8 max-sm:ml-0'>
                     <h3 className='underline'>SOLUTION</h3>
                     {documentToReactComponents(solution, renderOptions)}
                   </div>
-                  <div className='border border-teal-700  p-8 ml-8 mb-8'>
+                  <div className='border border-teal-700  p-8 ml-8 mb-8 max-sm:ml-0'>
                     <h3 className='underline'>RESULT</h3>
                     {documentToReactComponents(result, renderOptions)}
                   </div>
-                  <div className='p-2 justify-between flex-wrap ml-8'>
+                  <div className='p-2 justify-between flex-wrap ml-8 max-sm:ml-0'>
                     {techstack.map((i) => 
                       <button className='bg-teal-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 m-2'>{i}
                       </button> )}

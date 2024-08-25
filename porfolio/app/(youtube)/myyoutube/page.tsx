@@ -12,7 +12,7 @@ const MyYoutube = async () => {
               const videoId = singleVideo.id.videoId
               const thumbnailMedium = singleVideo.snippet.thumbnails.high.url
               return (
-                    <div key={title} className="block max-w-sm sm:m-10 m-10 mt-20 rounded-lg shadow">
+                    <div key={title} className="block max-w-sm sm:m-8 m-6 mt-20 rounded-lg shadow">
                         <Link href={`https://www.youtube.com/watch?v=${videoId}`} target="_blank" className="block m-5">
                         <figure className="md:w-[300px] sm:w-[150px]">
                             <img className="h-auto md:max-w-full sm:w-[96] rounded-lg" src={thumbnailMedium}/>

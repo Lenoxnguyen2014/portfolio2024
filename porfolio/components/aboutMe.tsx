@@ -46,9 +46,8 @@ export default function AboutMe (props: infoAboutMe) {
     }
   }
 
-  console.log(props.contentIntro)
   return (
-      <div ref={ref} className='w-full flex flex-col items-center text-white sm:mx-8'>
+      <div ref={ref} className='w-full flex flex-col items-center text-white'>
         {isClient
           ? <motion.div className='flex items-center flex-col w-full max-sm:grid-cols-1'>
               <EachImage images={parsePhotos}/>
@@ -57,10 +56,10 @@ export default function AboutMe (props: infoAboutMe) {
                   initial="hidden"
                   animate="visible"
                   transition= {{ ease: 'easeOut', duration: 2 }}
-                  className='px-[19.5vw] max-sm:px-4'>
+                  className='xl:px-[25vw] md:px-16 max-sm:px-4'>
                   <MyHeader title={props.headline} subTitle=""/>
                   <br />
-                  <motion.div className='md:mx-8'>
+                  <motion.div className='md:mx-8 max-sm:mx-10'>
                     {documentToReactComponents( props.contentIntro, renderOptions)}
                   </motion.div>
               </motion.div>

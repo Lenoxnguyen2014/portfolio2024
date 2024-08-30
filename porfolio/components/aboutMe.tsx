@@ -3,17 +3,16 @@ import React, { useEffect, useRef, useState } from 'react'
 import { motion, useScroll } from 'framer-motion'
 import Image from 'next/image'
 import EachImage from './eachImage'
-import myProfile from '../src/my_profile.jpg'
 import MyHeader from './pageHeader'
 import { renderOptions } from '@/lib/formatContent'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 interface infoAboutMe {
-    intro: string | null
-    introTitle: string | null
+    intro: string
+    introTitle: string
     gallery: []
     contentIntro: {}
-    headline: string | null
+    headline: string
 }
 
 export default function AboutMe (props: infoAboutMe) {
@@ -26,8 +25,7 @@ export default function AboutMe (props: infoAboutMe) {
   useEffect(() => {
     setIsClient(true)
   }, [])
-  let galleryBox = {}
-  let introBox = {}
+
   const parsePhotos: Image = []
 
   props.gallery.map((item) => {
@@ -52,10 +50,7 @@ export default function AboutMe (props: infoAboutMe) {
           ? <motion.div className='flex items-center flex-col w-full max-sm:grid-cols-1'>
               <EachImage images={parsePhotos}/>
               <motion.div
-                  variants={introBox}
-                  initial="hidden"
-                  animate="visible"
-                  transition= {{ ease: 'easeOut', duration: 2 }}
+           
                   className='xl:px-[25vw] md:px-16 max-sm:px-4'>
                   <MyHeader title={props.headline} subTitle=""/>
                   <br />

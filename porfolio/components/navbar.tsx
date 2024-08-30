@@ -1,8 +1,8 @@
 'use client'
 import React, { useState } from 'react'
 import Link from 'next/link'
-import Logo from '../src/logo-lezen.png'
-import LogoSvg from '../src/lezenio.svg'
+import Logo from '../public/logo.png'
+// import LogoSvg from '../src/lezenio.svg'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
@@ -24,7 +24,7 @@ const NavBar = () => {
       <nav className='bg-dark border-gray-200 '>
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
         <a href="/">
-          <Image src={LogoSvg} alt="logo" className="h-36 w-36"/>
+          <Image src={Logo} alt="logo" className="h-36 w-36"/>
         </a>
         <button onClick={showMenu} type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
           <span className="sr-only">Open main menu</span>

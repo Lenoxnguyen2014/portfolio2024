@@ -40,7 +40,7 @@ export default function AboutMe (props: infoAboutMe) {
 
   const iconVariants = {
     out: {
-      y: 600
+      y: 500
     },
     in: {
       y: -500
@@ -89,7 +89,7 @@ export default function AboutMe (props: infoAboutMe) {
                   <motion.div className='md:mx-8 max-sm:mx-10'>
                     {documentToReactComponents( props.contentIntro, renderOptions)}
                   </motion.div>
-                  <p className='mt-8 xl:mx-[18vw] md:mx-16 max-sm:mx-4'>
+                  <p className='mt-8 xl:mx-[20vw] md:mx-16 max-sm:ml-10'>
                   <a href='/resume.pdf' target="_blank">
                     <button data-tooltip-target="tooltip" className="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg  bg-cyan border text-sm" type="button">
                     <div className="flex p-4">

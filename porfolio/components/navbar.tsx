@@ -21,7 +21,7 @@ const NavBar = () => {
     { href: '/myyoutube', label: 'My Youtube' }
   ]
   return (
-      <nav className='bg-dark border-gray-200 '>
+      <nav className='bg-dark border-gray-200 max-sm:mb-24'>
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
         <a href="/">
           <Image src={Logo} alt="logo" className="h-36 w-36"/>

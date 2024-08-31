@@ -29,11 +29,11 @@ export default function AboutMe (props: infoAboutMe) {
     in: {
       y: 0,
       transition: {
-        duration: 3,
+        duration: 1.5,
         // The first child will appear ater the parent has appeared on the screen
-        delayChildren: 1.2,
+        delayChildren: 1,
         // The next sibling will appear 0.5s after the previous one
-        staggerChildren: 1.5
+        staggerChildren: 0.5
       }
     }
   }
@@ -77,11 +77,9 @@ export default function AboutMe (props: infoAboutMe) {
                 <motion.div variants={anotherVariant}>
                   <Trailer />
                 </motion.div>
-                <motion.div variants={iconVariants}>
-                <EachImage images={parsePhotos}/>
-                </motion.div>
-              <motion.div
-                  variants={iconVariants}
+                <motion.div className='flex flex-col items-center' variants={iconVariants}>
+                  <EachImage images={parsePhotos}/>
+                  <div
                   className='xl:px-[25vw] md:px-16 max-sm:px-4'>
 
                   <MyHeader title={props.headline} subTitle=""/>
@@ -100,7 +98,9 @@ export default function AboutMe (props: infoAboutMe) {
                       </button>
                     </a>
                   </p>
-              </motion.div>
+              </div>
+                </motion.div>
+
           </motion.div>
           : <></>}
       </div>

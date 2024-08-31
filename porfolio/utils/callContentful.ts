@@ -1,5 +1,6 @@
 import { createClient } from 'contentful'
 import { BlogQueryResult } from '@/src/type'
+import { Client } from '@vercel/postgres'
 
 const client = createClient({
   space: `${process.env.CONTENTFUL_SPACE_ID}`,
@@ -25,10 +26,28 @@ export const getAllProjectEntry = async () => {
   return entries
 }
 
-export const getPerProjectEntry = async (id: string) => {
-  const entry = await client.getEntries({ content_type: 'projects', limit: 1, 'fields.id': id}).then((entry) => entry)
+export const getAllServicesEntry = async() => {
+  const entries = await client.getEntries({ content_type: 'services'})
 
-  return entry
+  return entries
+}
+
+export const getAllReviewsEntry = async() => {
+  const entries = await client.getEntries({ content_type: 'reviews'})
+
+  return entries
+}
+
+export const getAllProcessEntry = async() => {
+  const entries = await client.getEntries({ content_type: 'process'})
+
+  return entries
+}
+
+export const getPerProjectEntry = async (id: string) => {
+  const entries = await client.getEntries({ content_type: 'projects', limit: 1, 'fields.id': id}).then((entry) => entry)
+
+  return entries
 }
 
 export const getIntroAboutMe = async () => {

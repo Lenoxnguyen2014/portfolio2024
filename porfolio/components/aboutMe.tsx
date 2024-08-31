@@ -3,9 +3,13 @@ import React, { useEffect, useRef, useState } from 'react'
 import { motion, useScroll } from 'framer-motion'
 import EachImage from './eachImage'
 import MyHeader from './pageHeader'
+import Image from 'next/image'
+import MyProfile from '../public/my_profile.jpg'
+import More from '../public/more.png'
 import { renderOptions } from '@/lib/formatContent'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Trailer from './trailer'
+import ServicesIntro from './servicesIntro'
 
 interface infoAboutMe {
     intro: string
@@ -13,6 +17,7 @@ interface infoAboutMe {
     gallery: []
     contentIntro: {}
     headline: string
+    introServices: []
 }
 
 export default function AboutMe (props: infoAboutMe) {
@@ -80,25 +85,22 @@ export default function AboutMe (props: infoAboutMe) {
                 <motion.div className='flex flex-col items-center' variants={iconVariants}>
                   <EachImage images={parsePhotos}/>
                   <div
-                  className='xl:px-[25vw] md:px-16 max-sm:px-4'>
+                    className='xl:px-[25vw] md:px-16 max-sm:px-4'>
 
-                  <MyHeader title={props.headline} subTitle=""/>
-                  <br />
-                  <motion.div className='md:mx-8 max-sm:mx-10'>
-                    {documentToReactComponents( props.contentIntro, renderOptions)}
-                  </motion.div>
-                  <p className='mt-8 xl:mx-[20vw] md:mx-16 max-sm:ml-10'>
-                  <a href='/resume.pdf' target="_blank">
-                    <button data-tooltip-target="tooltip" className="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg  bg-cyan border text-sm" type="button">
-                    <div className="flex p-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#54808C"><path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/>
-                      </svg>
-                        Download my resume
-                      </div>
+                    <MyHeader title={props.headline} subTitle=""/>
+                    <br />
+                    <motion.div className='md:mx-8 max-sm:mx-10'>
+                      {documentToReactComponents( props.contentIntro, renderOptions)}
+                    </motion.div>
+                    <div className='mt-8 xl:mx-[20vw] md:mx-16 max-sm:ml-10'>
+                      <button className='flex items-center flex-row text-primary underline'>
+                        <Image width={20} src={More} alt="more" />
+                        <p className='bold text-lg ml-2'>MY SERVICES</p>
                       </button>
-                    </a>
-                  </p>
-              </div>
+                    </div>
+                  </div>
+                <ServicesIntro introServices={props.introServices}/>
+                
                 </motion.div>
 
           </motion.div>

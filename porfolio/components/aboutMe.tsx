@@ -10,6 +10,7 @@ import { renderOptions } from '@/lib/formatContent'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Trailer from './trailer'
 import ServicesIntro from './servicesIntro'
+import RecentProjects from './recentProject'
 
 interface infoAboutMe {
     intro: string
@@ -18,6 +19,7 @@ interface infoAboutMe {
     contentIntro: {}
     headline: string
     introServices: []
+    recentProjects:[]
 }
 
 export default function AboutMe (props: infoAboutMe) {
@@ -57,6 +59,7 @@ export default function AboutMe (props: infoAboutMe) {
       y: -600
     }
   }
+  
   const parsePhotos: Image = []
 
   props.gallery.map((item) => {
@@ -82,7 +85,7 @@ export default function AboutMe (props: infoAboutMe) {
                 <motion.div variants={anotherVariant}>
                   <Trailer />
                 </motion.div>
-                <motion.div className='flex flex-col items-center' variants={iconVariants}>
+                <motion.div className='flex flex-col items-center my-8' variants={iconVariants}>
                   <EachImage images={parsePhotos}/>
                   <div
                     className='xl:px-[25vw] md:px-16 max-sm:px-4'>
@@ -99,8 +102,8 @@ export default function AboutMe (props: infoAboutMe) {
                       </button>
                     </div>
                   </div>
-                <ServicesIntro introServices={props.introServices}/>
-                
+                  <ServicesIntro introServices={props.introServices}/>
+                  <RecentProjects recentProjects={props.recentProjects}/>
                 </motion.div>
 
           </motion.div>

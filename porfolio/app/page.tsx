@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react'
 import { getWeatherData } from '@/utils/callOpenApi'
-import { getIntroAboutMe, getAllServicesEntry, getAllProcessEntry, getAllReviewsEntry } from '@/utils/callContentful'
+import { getIntroAboutMe, getAllServicesEntry, getAllProcessEntry, getAllReviewsEntry, getAllProjectEntry } from '@/utils/callContentful'
 import Loading from '@/components/loading'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import ServicesIntro from '@/components/servicesIntro'
@@ -19,9 +19,12 @@ export default async function Home () {
   const introServices = await getAllServicesEntry()
   const introProcess = await getAllProcessEntry()
   const introReview = await getAllReviewsEntry()
+  const introProjects = await getAllProjectEntry()
 
   const aboutMe = introAboutMe.items[0].fields
+
   const services = introServices.items
+  const recentProjects = introProjects.items
   const process = introProcess.items
   const review = introReview.items
 
@@ -40,6 +43,7 @@ export default async function Home () {
         contentIntro={content}
         headline={headline}
         introServices={services}
+        recentProjects={recentProjects}
         />
       <GoogleAnalytics gaId="G-FMFWNCYELS" />
     </Suspense>

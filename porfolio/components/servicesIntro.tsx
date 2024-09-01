@@ -24,7 +24,7 @@ export default function ServicesIntro (props: introServices) {
         listServices.push(itemObject)
     })
     return (
-        <div className="grid grid-cols-3 gap-2 mt-24">
+        <div className="grid grid-cols-3 gap-2 mt-24 md:flex flex-cols flex-wrap max-sm:block">
             {isClient ? 
             <>
                 {listServices.reverse().map((item, key) => {

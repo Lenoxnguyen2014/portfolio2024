@@ -21,7 +21,17 @@ export default function RecentProjects (props: RecentProjects) {
     })
     return(
         <div className="mt-24 grid grid-cols-2 gap-6">
-            <motion.div className="flex">
+            <motion.div className="flex"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ 
+                    type: 'spring',
+                    stiffness: 130,
+                    mass: 7,
+                    damping: 1,
+                    duration: 2.5 }}
+                >
                 <MyHeader title="Recent Projects" subTitle="" />
             </motion.div>
             {listProjects.slice(0,3).map((item, key) => {

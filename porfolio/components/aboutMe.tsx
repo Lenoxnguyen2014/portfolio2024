@@ -11,6 +11,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Trailer from './trailer'
 import ServicesIntro from './servicesIntro'
 import RecentProjects from './recentProject'
+import ProcessIntro from './processIntro'
 
 interface infoAboutMe {
     intro: string
@@ -20,6 +21,7 @@ interface infoAboutMe {
     headline: string
     introServices: []
     recentProjects:[]
+    introProcess: []
 }
 
 export default function AboutMe (props: infoAboutMe) {
@@ -104,7 +106,8 @@ export default function AboutMe (props: infoAboutMe) {
                   </div>
                   <ServicesIntro introServices={props.introServices}/>
                   <RecentProjects recentProjects={props.recentProjects}/>
-                </motion.div>
+                  <ProcessIntro processIntro={props.introProcess} />
+                </motion.div> 
 
           </motion.div>
           : <></>}

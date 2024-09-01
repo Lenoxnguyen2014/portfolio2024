@@ -44,6 +44,7 @@ export default async function Home () {
         headline={headline}
         introServices={services}
         recentProjects={recentProjects}
+        introProcess={process}
         />
       <GoogleAnalytics gaId="G-FMFWNCYELS" />
     </Suspense>

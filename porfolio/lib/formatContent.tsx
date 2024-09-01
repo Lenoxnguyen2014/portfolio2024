@@ -1,12 +1,32 @@
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types"
 
 export const renderOptions = {
     renderNode: {
+      [BLOCKS.PARAGRAPH]: (node, children) => (
+        <p className="">{children}</p>
+      ),
+      [BLOCKS.UL_LIST]: (node, children) => (
+        <ul className="list-disc list-inside">{children}</ul>
+      ),
+      [BLOCKS.OL_LIST]: (node, children) => (
+        <ol className="list-decimal list-inside m-24">{children}</ol>
+      ),
+      [BLOCKS.LIST_ITEM]: (node, children) => {
+        // Unwrap paragraphs inside list items
+        const unTaggedChildren = documentToReactComponents(node, {
+          renderNode: {
+            [BLOCKS.PARAGRAPH]: (_node, children) => children, // Remove <p> tags inside <li>
+          },
+        });
+        return unTaggedChildren;
+      },
       [INLINES.EMBEDDED_ENTRY]: (node, children) => {
         // target the contentType of the EMBEDDED_ENTRY to display as you need
         if (node.data.target.sys.contentType.sys.id === "blogPost") {
           return (
-            <a href={`/blog/${node.data.target.fields.slug}`}>            {node.data.target.fields.title}
+            <a href={`/blog/${node.data.target.fields.slug}`}>           
+             {node.data.target.fields.title}
             </a>
           );
         }

@@ -11,6 +11,13 @@ body {
 
 }
 
+@layer base {
+  ul, ol {
+    list-style: revert;
+    margin: 24px;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

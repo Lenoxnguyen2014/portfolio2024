@@ -22,6 +22,7 @@ export default function ProcessIntro (props: processIntro) {
             title: item.fields.title,
             subTitle: item.fields.subTitle
         }
+
         listProcess.push(itemObject)
     })
     console.log(listProcess)

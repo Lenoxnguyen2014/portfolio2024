@@ -12,6 +12,7 @@ import Trailer from './trailer'
 import ServicesIntro from './servicesIntro'
 import RecentProjects from './recentProject'
 import ProcessIntro from './processIntro'
+import ReviewsIntro from './reviewIntro'
 
 interface infoAboutMe {
     intro: string
@@ -22,10 +23,10 @@ interface infoAboutMe {
     introServices: []
     recentProjects:[]
     introProcess: []
+    introReviews: []
 }
 
 export default function AboutMe (props: infoAboutMe) {
-
   const [isClient, setIsClient] = useState(false)
   useEffect(() => {
     setIsClient(true)
@@ -107,6 +108,7 @@ export default function AboutMe (props: infoAboutMe) {
                   <ServicesIntro introServices={props.introServices}/>
                   <RecentProjects recentProjects={props.recentProjects}/>
                   <ProcessIntro processIntro={props.introProcess} />
+                  <ReviewsIntro introReviews={props.introReviews}/>
                 </motion.div> 
 
           </motion.div>

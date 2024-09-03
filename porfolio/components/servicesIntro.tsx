@@ -23,6 +23,7 @@ export default function ServicesIntro (props: introServices) {
         }
         listServices.push(itemObject)
     })
+
     return (
         <div className="grid grid-cols-3 gap-2 mt-24 md:flex flex-cols flex-wrap max-sm:block">
             {isClient ? 
@@ -31,8 +32,9 @@ export default function ServicesIntro (props: introServices) {
                 return(
                     <div key={key} className="border border-secondary w-[400px] h-[280px] p-6 ">
                         <h2 className="bold text-2xl text-secondary mb-4">{item.name}</h2>
-                        <p className="text-primary mt-12 font-sans text-xl">{documentToReactComponents( item.intro, renderOptions)}</p>
+                        <div className="text-primary mt-12 font-sans text-xl">{documentToReactComponents( item.intro, renderOptions)} </div>
                     </div>
+                    
                 )
             })}
             </> : <></>}

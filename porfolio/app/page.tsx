@@ -3,7 +3,6 @@ import { getWeatherData } from '@/utils/callOpenApi'
 import { getIntroAboutMe, getAllServicesEntry, getAllProcessEntry, getAllReviewsEntry, getAllProjectEntry } from '@/utils/callContentful'
 import Loading from '@/components/loading'
 import { GoogleAnalytics } from '@next/third-parties/google'
-import ServicesIntro from '@/components/servicesIntro'
 
 const AboutMePreview = lazy(() => delayForDemo(import('../components/aboutMe')))
 
@@ -26,14 +25,13 @@ export default async function Home () {
   const services = introServices.items
   const recentProjects = introProjects.items
   const process = introProcess.items
-  const review = introReview.items
+  const reviews = introReview.items
 
   const introTitle = aboutMe.introTitle
   const gallery = aboutMe.gallery
   const intro = aboutMe.intro
   const content = aboutMe.content_intro
   const headline = aboutMe.headline
-
   return (
     <Suspense fallback={<Loading />} className='flex w-full items-center flex-col max-sm:mx-0'>
       <AboutMePreview 
@@ -45,6 +43,7 @@ export default async function Home () {
         introServices={services}
         recentProjects={recentProjects}
         introProcess={process}
+        introReviews={reviews}
         />
       <GoogleAnalytics gaId="G-FMFWNCYELS" />
     </Suspense>

@@ -21,13 +21,13 @@ export default function EachImage (props: ImagesPhotos) {
   const handleMovePrev = () => setIndex(prevIndex)
   const handleMoveNext = () => setIndex(nextIndex)
   return (
-    <div className=''>
+    <div className="xl:px-[18vw] md:px-16 max-sm:px-4">
       <Gallery
         images={props.images}
         onClick={handleClick}
         enableImageSelection={false}
       />
-        <div className='italic text-black'>@Lezen io</div>
+        <div className='italic text-dark'>@Lezen io</div>
       {!!currentImage && (
         <Lightbox
           mainSrc={currentImage.src}

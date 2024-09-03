@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react"
 import { renderOptions } from '@/lib/formatContent'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import Image from "next/image"
 
 interface introReviews {
     introReviews: []
@@ -16,7 +15,6 @@ export default function ReviewsIntro (props: introReviews) {
     useEffect(() => {
       setIsClient(true)
     }, [])
-    console.log(props.introReviews)
     props.introReviews.map((item, key) => {
         const itemObject = {
             num: key,
@@ -26,7 +24,6 @@ export default function ReviewsIntro (props: introReviews) {
         }
         listReviews.push(itemObject)
     })
-    console.log(listReviews)
     return(
         
         <div className="mt-72 flex items-center flex-col w-full h-auto ">

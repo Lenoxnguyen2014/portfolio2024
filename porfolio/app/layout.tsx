@@ -31,7 +31,7 @@ export default async function RootLayout ({
         <div>
           {children}
         </div>
-        <footer className="sticky top-[100vh]">
+        <footer className="sticky top-[0vh]">
           <Footer />
         </footer>
         <SpeedInsights />

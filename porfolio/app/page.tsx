@@ -4,16 +4,14 @@ import { getIntroAboutMe, getAllServicesEntry, getAllProcessEntry, getAllReviews
 import Loading from '@/components/loading'
 import { GoogleAnalytics } from '@next/third-parties/google'
 
-const AboutMePreview = lazy(() => delayForDemo(import('../components/aboutMe')))
+const MainPreview = lazy(() => delayForDemo(import('../components/main')))
 
-function delayForDemo(promise: Promise<typeof import("../components/aboutMe")>) {
+function delayForDemo(promise: Promise<typeof import("../components/main")>) {
   return new Promise(resolve => {
     setTimeout(resolve, 2000);
   }).then(() => promise);
 }
-export default async function Home () {
-  const data = await getWeatherData()
-  
+export default async function Home () {  
   const introAboutMe = await getIntroAboutMe()
   const introServices = await getAllServicesEntry()
   const introProcess = await getAllProcessEntry()
@@ -30,15 +28,17 @@ export default async function Home () {
   const introTitle = aboutMe.introTitle
   const gallery = aboutMe.gallery
   const intro = aboutMe.intro
+  const punchline = aboutMe.punchline
   const content = aboutMe.content_intro
   const headline = aboutMe.headline
   return (
     <Suspense fallback={<Loading />} className='flex w-full items-center flex-col max-sm:mx-0'>
-      <AboutMePreview 
+      <MainPreview 
         introTitle={introTitle}
         gallery={gallery}
         intro={intro}
         contentIntro={content}
+        punchline={punchline}
         headline={headline}
         introServices={services}
         recentProjects={recentProjects}

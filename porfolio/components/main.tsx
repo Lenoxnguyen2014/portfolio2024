@@ -11,6 +11,7 @@ import RecentProjects from './recentProject'
 import ProcessIntro from './processIntro'
 import ReviewsIntro from './reviewIntro'
 import AboutMe from './aboutMe'
+import myFace from "../public/my_profile_bg_black_processed.png"
 
 interface Main {
     intro: string
@@ -88,20 +89,26 @@ export default function Main (props: infoAboutMe) {
                   <Trailer />
                 </motion.div>
                 <motion.div className='flex flex-col items-center my-8' variants={iconVariants}>
-                <div
+                  <Image width={500} height={400} src={myFace} alt="my_profile" />
+                  <motion.div
+                   initial={{ opacity: 0, y: -300 }}
+                   whileInView={{ opacity: 1 }}
+                   viewport={{ once: true }}
+                   animate={{y: -200}}
+                   transition={{ease: "easeIn", duration: 2}}
                     className='xl:px-[18vw] md:px-16 max-sm:px-4'>
 
                     <MyHeader title={props.headline} subTitle=""/>
                     <br />
 
-                  </div>
-                  <EachImage  images={parsePhotos}/>
-                  <div className='mt-8 xl:mx-[20vw] md:mx-16 max-sm:ml-10'>
+                  </motion.div>
+                  {/* <EachImage  images={parsePhotos}/> */}
+                  {/* <div className='mt-8 xl:mx-[20vw] md:mx-16 max-sm:ml-10'>
                       <button className='flex items-center flex-row text-primary underline'>
                         <Image width={20} src={More} alt="more" />
                         <p className='bold text-lg ml-2'>MY SERVICES</p>
                       </button>
-                    </div>
+                    </div> */}
                   <ServicesIntro introServices={props.introServices}/>
                   <RecentProjects recentProjects={props.recentProjects}/>
                   <ProcessIntro processIntro={props.introProcess} />

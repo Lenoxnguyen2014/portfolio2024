@@ -1,6 +1,5 @@
 import { createClient } from 'contentful'
 import { BlogQueryResult } from '@/src/type'
-import { Client } from '@vercel/postgres'
 
 const client = createClient({
   space: `${process.env.CONTENTFUL_SPACE_ID}`,

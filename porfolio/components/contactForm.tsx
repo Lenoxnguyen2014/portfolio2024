@@ -1,12 +1,14 @@
-import { newContact } from "@/utils/actions"
+'use client'
+import {fetchMailchimp} from "@/utils/callMailchimp"
+import axios from "axios"
 
 const ContactForm = () => {
     return (
-        <form className="max-w-sm rounded overflow-hidden shadow-lg" action={newContact}>
-    <div className="px-6 pt-4 pb-2">
-      <div className="email block flex items-center mb-4">
-        <label htmlFor="frm-email" className="m-2">Email</label>
-        <input className="box-border border-2 block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+      <form className="max-w-sm rounded border-secondary overflow-hidden shadow-lg bg-primary pt-10" action={fetchMailchimp}>
+        <div className="px-6 pt-4 pb-2">
+          <div className="email block flex items-center mb-4">
+            <label htmlFor="frm-email" className="m-2">Email</label>
+            <input className="box-border border-2 block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
           id="frm-email"
           type="email"
           name="email"
@@ -55,7 +57,7 @@ const ContactForm = () => {
       </div>
       </div>
       <div className="flex px-6 py-4 float-right">
-        <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" type="submit">Submit</button>
+        <button className="bg-transparent hover:bg-secondary text-white font-semibold  py-2 px-4 border border-secondary hover:border-transparent rounded" type="submit">Submit</button>
       </div>
         </form>
     )

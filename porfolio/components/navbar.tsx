@@ -17,7 +17,7 @@ const NavBar = () => {
   const links = [
     { href: '/projects', label: 'Projects' },
     { href: '/blogs', label: 'Blogs' },
-    { href: '/myyoutube', label: 'My Youtube' }
+    { href: '/myyoutube', label: 'My Youtube' },
   ]
   return (
       <nav className='bg-dark border-gray-200 max-sm:mb-24'>
@@ -38,7 +38,9 @@ const NavBar = () => {
                 <a className={`inline-flex px-3 py-1.5 white hover:text-cyan-500 [&.active]:underline decoration-cyan-400 [&.active]:text-primary ${pathname === `${href}` ? 'active' : ''}`} href={href}>{label}</a>
               </li>
         ))}
-            <li><a href="https://www.buymeacoffee.com/lezen"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=lezen&button_colour=164e63&font_colour=ffffff&font_family=Arial&outline_colour=ffffff&coffee_colour=FFDD00" /></a></li>
+            <li className='text-sm md:text-xl font-bold'>
+              <a className="border border-secondary text-primary inline-flex px-3 py-1.5 white hover:text-cyan-500 [&.active]:underline decoration-cyan-400 [&.active]:text-primary" href="/contact"> Let's talk</a>
+            </li>
           </ul>
           </motion.div>
         </div>

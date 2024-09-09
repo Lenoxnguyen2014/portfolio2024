@@ -36,9 +36,9 @@ export default function RecentProjects (props: RecentProjects) {
             </motion.div>
             {listProjects.slice(0,3).map((item, key) => {
                 return(
-                    <div key={item.slug} className="relative max-w-xl mx-auto max-sm:mx-2">
+                    <div key={item.slug} className="relative max-w-xl mx-auto max-sm:mx-2 max-md:max-w-sm">
                     <Link href={`/projects/${item.id}/${item.slug}`}>
-                    <img className="h-[450px] w-full object-cover rounded-md" src={item.thumbnail} width={250}/>
+                    <img className="h-[450px] w-full object-cover rounded-md max-md:h-[300px]" src={item.thumbnail} width={250}/>
                     <div className="absolute inset-0 bg-black opacity-40 rounded-md hover:opacity-0 "></div>
                       <div className="absolute bottom-10 right-5 left-5 flex items-center justify-center">
                         <div className="border-cyan-500 flex justify-between border w-full p-4 bg-black/30 backdrop-blur-lg text-primary ">

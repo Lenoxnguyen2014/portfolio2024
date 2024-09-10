@@ -26,7 +26,7 @@ export default function ReviewsIntro (props: introReviews) {
     })
     return(
         
-        <div className="mt-72 flex items-center flex-col w-full h-auto ">
+        <div className="mt-72 flex items-center flex-col w-full h-auto max-sm:block">
             <div className="flex flex-col items-center justify-center md:mx-8">
                 <h1 className="text-3xl font-extrabold text-white-100 text-primary md:text-5xl lg:text-6xl max-sm:mx-10 max-sm:my-0 italic">
                         What my clients say

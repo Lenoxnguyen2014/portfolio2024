@@ -43,7 +43,7 @@ export default function ProcessIntro (props: processIntro) {
                             <div className="w-[500px] mt-[24rem] ml-[-64px] py-8 text-primary max-sm:w-96 max-sm:block max-sm:w-[300px]" key={key}>
                                 <div className="border w-16 h-16 p-6 rounded-full flex items-center border-secondary bg-slate-700 max-sm:w-2 max-sm:h-2 max-sm:p-4 max-sm:ml-[30px]">
                                     {item.step}
-                                <div className="border border-dashed border-slate-700 h-[600px] opacity-90 max-sm:hidden"></div>
+                                <div className="border border-dashed border-slate-700 h-[600px] opacity-90 md:hidden max-sm:hidden"></div>
                                 </div>
                                 <div className="w-full p-6 ml-[72px] mt-[-30px] border border-secondary ">
                                         <h2 className="text-lg bold">{item.title}</h2>

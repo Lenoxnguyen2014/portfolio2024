@@ -102,18 +102,11 @@ export default function Main (props: infoAboutMe) {
                     <br />
 
                   </motion.div>
-                  {/* <EachImage  images={parsePhotos}/> */}
-                  {/* <div className='mt-8 xl:mx-[20vw] md:mx-16 max-sm:ml-10'>
-                      <button className='flex items-center flex-row text-primary underline'>
-                        <Image width={20} src={More} alt="more" />
-                        <p className='bold text-lg ml-2'>MY SERVICES</p>
-                      </button>
-                    </div> */}
                   <ServicesIntro introServices={props.introServices}/>
                   <RecentProjects recentProjects={props.recentProjects}/>
                   <ProcessIntro processIntro={props.introProcess} />
-                  {/* <ReviewsIntro introReviews={props.introReviews}/> */}
-                  {/* <AboutMe contentIntro={props.contentIntro} punchline={props.punchline} intro={props.intro}/>  */}
+                  <ReviewsIntro introReviews={props.introReviews}/>
+                  <AboutMe contentIntro={props.contentIntro} punchline={props.punchline} intro={props.intro}/> 
                 </motion.div> 
 
           </motion.div>

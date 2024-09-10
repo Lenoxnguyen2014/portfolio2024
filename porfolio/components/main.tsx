@@ -112,8 +112,8 @@ export default function Main (props: infoAboutMe) {
                   <ServicesIntro introServices={props.introServices}/>
                   <RecentProjects recentProjects={props.recentProjects}/>
                   <ProcessIntro processIntro={props.introProcess} />
-                  <ReviewsIntro introReviews={props.introReviews}/>
-                  {/* <AboutMe contentIntro={props.contentIntro} punchline={props.punchline} intro={props.intro}/> */} */}
+                  {/* <ReviewsIntro introReviews={props.introReviews}/> */}
+                  {/* <AboutMe contentIntro={props.contentIntro} punchline={props.punchline} intro={props.intro}/>  */}
                 </motion.div> 
 
           </motion.div>

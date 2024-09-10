@@ -31,7 +31,6 @@ export default function Main (props: infoAboutMe) {
   useEffect(() => {
     setIsClient(true)
   }, [])
-
   const boxVariants = {
     out: {
       y: 600
@@ -74,12 +73,7 @@ export default function Main (props: infoAboutMe) {
     }
     parsePhotos.push(itemObject)
   })
-  if (typeof window !== 'undefined') {
-    const isMobile = window.innerWidth < 768
-    if (!isMobile) {
 
-    }
-  }
 
   return (
       <div className='w-full flex flex-col items-center text-white'>

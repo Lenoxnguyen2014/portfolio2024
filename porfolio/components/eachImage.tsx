@@ -21,7 +21,7 @@ export default function EachImage (props: ImagesPhotos) {
   const handleMovePrev = () => setIndex(prevIndex)
   const handleMoveNext = () => setIndex(nextIndex)
   return (
-    <div className="xl:px-[18vw] md:px-16 max-sm:px-4">
+    <div>
       <Gallery
         images={props.images}
         onClick={handleClick}
